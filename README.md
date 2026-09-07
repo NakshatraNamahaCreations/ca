@@ -123,14 +123,18 @@ always placed on a white rounded tile. That keeps it legible on the dark video
 banner without needing a cut-out version. If you get a transparent PNG/SVG,
 drop it in and remove the white tile from `Logo.tsx`.
 
-The palette is sampled directly from the logo and defined in the `@theme` block
-of `src/app/globals.css`:
+The palette is defined in the `@theme` block of `src/app/globals.css`:
 
-| Token          | Colour    | Used for                            |
-| -------------- | --------- | ----------------------------------- |
-| `brand-600`    | `#185888` | Primary navy — buttons, links, icons |
-| `accent-500`   | `#F57921` | Saffron — CTAs, highlights           |
-| `leaf-500`     | `#52B946` | Green — success ticks, confirmations |
+| Token          | Colour    | Used for                                 |
+| -------------- | --------- | ---------------------------------------- |
+| `brand-600`    | `#1D3C6B` | Navy — buttons, links, headings           |
+| `brand-900`    | `#00163B` | Deepest navy, sampled from the wordmark   |
+| `accent-500`   | `#C39A45` | Gold — eyebrows, CTAs, ticks, highlights  |
+| `--bg-2`       | `#FAF4EA` | Cream — alternating section backgrounds   |
+
+Sampled from the Apex Radiant Consultant LLP brand card (gold eagle mark, navy
+wordmark, cream ground). There is no green in the palette: the ticks and
+accents that were previously green now use gold.
 
 Change those hex values to rebrand the entire site.
 

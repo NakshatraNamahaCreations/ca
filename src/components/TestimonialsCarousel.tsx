@@ -84,7 +84,7 @@ export default function TestimonialsCarousel() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(38rem 22rem at 0% 0%, rgba(82,185,70,.06), transparent 60%), radial-gradient(34rem 20rem at 100% 100%, rgba(24,88,136,.06), transparent 62%)",
+            "radial-gradient(38rem 22rem at 0% 0%, rgba(195,154,69,.06), transparent 60%), radial-gradient(34rem 20rem at 100% 100%, rgba(29,60,107,.06), transparent 62%)",
         }}
       />
 
@@ -133,10 +133,10 @@ export default function TestimonialsCarousel() {
               key={t.name}
               className="w-[19.5rem] shrink-0 snap-start sm:w-[22rem]"
             >
-              <figure className="flex h-full flex-col rounded-2xl border border-[#e6edf3] bg-white p-7 shadow-[0_1px_2px_rgba(12,22,32,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_18px_40px_-12px_rgba(24,88,136,.22)]">
+              <figure className="flex h-full flex-col rounded-2xl border border-[#ece5d9] bg-white p-7 shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_18px_40px_-12px_rgba(29,60,107,.22)]">
                 <span
                   aria-hidden
-                  className="font-serif text-6xl leading-[0.6] text-leaf-500/45"
+                  className="font-serif text-6xl leading-[0.6] text-accent-500/45"
                 >
                   &ldquo;
                 </span>
@@ -168,7 +168,7 @@ function arrowClass(disabled: boolean) {
   return cn(
     "grid h-12 w-12 place-items-center rounded-full border transition-all duration-200",
     disabled
-      ? "cursor-not-allowed border-[#e6edf3] text-[#c3d0da]"
+      ? "cursor-not-allowed border-[#ece5d9] text-[#cbbfa9]"
       : "border-brand-200 text-brand-600 hover:-translate-y-0.5 hover:border-brand-600 hover:bg-brand-600 hover:text-white hover:shadow-lg hover:shadow-brand-600/25"
   );
 }

@@ -118,7 +118,7 @@ export default function ContactPage() {
               <ul className="mt-4 space-y-2.5 border-t pt-4">
                 {assurances.map((a) => (
                   <li key={a} className="flex items-center gap-2.5 text-sm">
-                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-leaf-500/15 text-leaf-600">
+                    <span className="grid h-4.5 w-4.5 shrink-0 place-items-center rounded-full bg-accent-500/15 text-accent-600">
                       <Check className="h-2.5 w-2.5" />
                     </span>
                     <span className="muted">{a}</span>

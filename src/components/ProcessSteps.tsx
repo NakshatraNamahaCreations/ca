@@ -55,7 +55,7 @@ export default function ProcessSteps() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(40rem 22rem at 50% -8%, rgba(24,88,136,.08), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(82,185,70,.05), transparent 65%)",
+            "radial-gradient(40rem 22rem at 50% -8%, rgba(29,60,107,.08), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(195,154,69,.05), transparent 65%)",
         }}
       />
 
@@ -79,7 +79,7 @@ export default function ProcessSteps() {
           </p>
           <span
             aria-hidden
-            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-600 via-accent-500 to-leaf-500"
+            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
           />
         </div>
 
@@ -87,7 +87,7 @@ export default function ProcessSteps() {
           {/* Continuous rail: sits behind the badges, fully visible above the cards */}
           <span
             aria-hidden
-            className="absolute top-10 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-full bg-[#dfe8f0] lg:block"
+            className="absolute top-10 right-[12.5%] left-[12.5%] hidden h-[3px] rounded-full bg-[#e4dbcb] lg:block"
           />
           <span
             aria-hidden
@@ -98,7 +98,7 @@ export default function ProcessSteps() {
             )}
             style={{
               background:
-                "linear-gradient(90deg, var(--color-brand-600), var(--color-accent-500) 55%, var(--color-leaf-500))",
+                "linear-gradient(90deg, var(--color-brand-600), var(--color-accent-500) 55%, var(--color-accent-300))",
               transitionDelay: animate ? "250ms" : undefined,
             }}
           />
@@ -134,7 +134,7 @@ export default function ProcessSteps() {
               </span>
 
               {/* Card */}
-              <div className="mt-8 flex h-full w-full flex-col rounded-2xl border border-[#e6edf3] bg-white p-6 text-center shadow-[0_1px_2px_rgba(12,22,32,.04)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-brand-200 group-hover:shadow-[0_20px_44px_-14px_rgba(24,88,136,.26)]">
+              <div className="mt-8 flex h-full w-full flex-col rounded-2xl border border-[#ece5d9] bg-white p-6 text-center shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-brand-200 group-hover:shadow-[0_20px_44px_-14px_rgba(29,60,107,.26)]">
                 <span className="text-[11px] font-bold tracking-[0.16em] text-accent-600 uppercase">
                   {step.label}
                 </span>
@@ -152,7 +152,7 @@ export default function ProcessSteps() {
                       key={d}
                       className={cn(
                         "h-1 rounded-full transition-all duration-500",
-                        d <= i ? "w-6 bg-brand-600" : "w-2 bg-[#dde6ee]"
+                        d <= i ? "w-6 bg-brand-600" : "w-2 bg-[#e2d9c9]"
                       )}
                     />
                   ))}

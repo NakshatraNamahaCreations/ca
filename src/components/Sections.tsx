@@ -26,7 +26,7 @@ export function AboutPreview() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(40rem 24rem at 0% 0%, rgba(24,88,136,.06), transparent 60%), radial-gradient(28rem 18rem at 100% 92%, rgba(82,185,70,.06), transparent 65%)",
+            "radial-gradient(40rem 24rem at 0% 0%, rgba(29,60,107,.06), transparent 60%), radial-gradient(28rem 18rem at 100% 92%, rgba(195,154,69,.06), transparent 65%)",
         }}
       />
 
@@ -42,7 +42,7 @@ export function AboutPreview() {
             </h2>
             <span
               aria-hidden
-              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-600 via-accent-500 to-leaf-500"
+              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
             />
 
             <p className="mt-7 text-base leading-relaxed text-pretty text-ink-muted">
@@ -52,7 +52,7 @@ export function AboutPreview() {
             <ul className="mt-8 space-y-4">
               {highlights.map((item) => (
                 <li key={item} className="flex items-start gap-3.5">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-leaf-500/12 text-leaf-600 ring-1 ring-leaf-500/20">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-accent-500/12 text-accent-600 ring-1 ring-accent-500/20">
                     <Check className="h-3.5 w-3.5" />
                   </span>
                   <span className="text-[15px] leading-relaxed text-ink">
@@ -89,7 +89,7 @@ export function AboutPreview() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to top, rgba(8,24,38,.42) 0%, transparent 45%)",
+                    "linear-gradient(to top, rgba(6,13,28,.42) 0%, transparent 45%)",
                 }}
               />
             </div>
@@ -119,7 +119,7 @@ export function AboutPreview() {
         </div>
 
         {/* Stats rail */}
-        <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-[#e6edf3] ring-1 ring-[#e6edf3] sm:mt-24 lg:grid-cols-4">
+        <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-[#ece5d9] ring-1 ring-[#ece5d9] sm:mt-24 lg:grid-cols-4">
           {stats.map((s) => (
             <div
               key={s.label}
@@ -151,7 +151,7 @@ export function CaseStudies() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(40rem 22rem at 100% 0%, rgba(24,88,136,.06), transparent 62%), radial-gradient(30rem 18rem at 0% 100%, rgba(82,185,70,.05), transparent 65%)",
+            "radial-gradient(40rem 22rem at 100% 0%, rgba(29,60,107,.06), transparent 62%), radial-gradient(30rem 18rem at 0% 100%, rgba(195,154,69,.05), transparent 65%)",
         }}
       />
 
@@ -169,7 +169,7 @@ export function CaseStudies() {
           </p>
           <span
             aria-hidden
-            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-600 via-accent-500 to-leaf-500"
+            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
           />
         </div>
 
@@ -177,7 +177,7 @@ export function CaseStudies() {
           {caseStudies.map((c) => (
             <article
               key={c.slug}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#e6edf3] bg-white shadow-[0_1px_2px_rgba(12,22,32,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-14px_rgba(24,88,136,.28)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#ece5d9] bg-white shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-14px_rgba(29,60,107,.28)]"
             >
               {/* Image with the headline sitting on it */}
               <div className="relative aspect-16/10 overflow-hidden">
@@ -193,7 +193,7 @@ export function CaseStudies() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(8,24,38,.92) 0%, rgba(8,24,38,.55) 42%, rgba(8,24,38,.18) 72%, rgba(8,24,38,.30) 100%)",
+                      "linear-gradient(to top, rgba(6,13,28,.92) 0%, rgba(6,13,28,.55) 42%, rgba(6,13,28,.18) 72%, rgba(6,13,28,.30) 100%)",
                   }}
                 />
 
@@ -216,13 +216,13 @@ export function CaseStudies() {
                   {c.body}
                 </p>
 
-                <ul className="mt-6 space-y-2.5 border-t border-[#eef3f7] pt-5">
+                <ul className="mt-6 space-y-2.5 border-t border-[#f2ece1] pt-5">
                   {c.outcomes.map((o) => (
                     <li
                       key={o}
                       className="flex items-center gap-2.5 text-sm font-medium text-ink"
                     >
-                      <span className="grid h-5 w-5 shrink-0 place-items-center rounded-md bg-leaf-500/12 text-leaf-600 ring-1 ring-leaf-500/20">
+                      <span className="grid h-5 w-5 shrink-0 place-items-center rounded-md bg-accent-500/12 text-accent-600 ring-1 ring-accent-500/20">
                         <Check className="h-3 w-3" />
                       </span>
                       {o}
@@ -234,7 +234,7 @@ export function CaseStudies() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-6 rounded-2xl border border-[#e6edf3] bg-[var(--bg-2)] p-8 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div className="mt-12 flex flex-col items-center gap-6 rounded-2xl border border-[#ece5d9] bg-[var(--bg-2)] p-8 text-center sm:flex-row sm:justify-between sm:text-left">
           <div>
             <h3 className="text-lg font-bold text-ink">
               Want similar results for your business?
@@ -266,7 +266,7 @@ export function BlogPreview() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(40rem 22rem at 100% 0%, rgba(24,88,136,.06), transparent 62%), radial-gradient(30rem 18rem at 0% 100%, rgba(245,121,33,.05), transparent 65%)",
+            "radial-gradient(40rem 22rem at 100% 0%, rgba(29,60,107,.06), transparent 62%), radial-gradient(30rem 18rem at 0% 100%, rgba(195,154,69,.05), transparent 65%)",
         }}
       />
 
@@ -281,7 +281,7 @@ export function BlogPreview() {
             </h2>
             <span
               aria-hidden
-              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-600 via-accent-500 to-leaf-500"
+              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
             />
           </div>
 
@@ -295,7 +295,7 @@ export function BlogPreview() {
           {posts.map((p) => (
             <article
               key={p.slug}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#e6edf3] bg-white shadow-[0_1px_2px_rgba(12,22,32,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-14px_rgba(24,88,136,.28)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#ece5d9] bg-white shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-14px_rgba(29,60,107,.28)]"
             >
               <div className="relative aspect-16/10 overflow-hidden">
                 <Image
@@ -310,7 +310,7 @@ export function BlogPreview() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(9,28,45,.62) 0%, rgba(9,28,45,.12) 45%, transparent 75%)",
+                      "linear-gradient(to top, rgba(10,22,45,.62) 0%, rgba(10,22,45,.12) 45%, transparent 75%)",
                   }}
                 />
 
@@ -332,7 +332,7 @@ export function BlogPreview() {
                   {p.excerpt}
                 </p>
 
-                <div className="mt-6 flex items-center gap-2.5 border-t border-[#eef3f7] pt-5">
+                <div className="mt-6 flex items-center gap-2.5 border-t border-[#f2ece1] pt-5">
                   <span className="grid h-7 w-7 place-items-center rounded-full bg-brand-50 text-[11px] font-bold text-brand-600">
                     R
                   </span>
@@ -366,14 +366,14 @@ export function ServiceAreas() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(7,20,32,.80) 0%, rgba(9,28,45,.60) 45%, rgba(7,20,32,.84) 100%)",
+              "linear-gradient(180deg, rgba(6,13,28,.80) 0%, rgba(10,22,45,.60) 45%, rgba(6,13,28,.84) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(45rem 26rem at 50% 0%, rgba(24,88,136,.35), transparent 62%)",
+              "radial-gradient(45rem 26rem at 50% 0%, rgba(29,60,107,.35), transparent 62%)",
           }}
         />
       </div>
@@ -392,7 +392,7 @@ export function ServiceAreas() {
           </p>
           <span
             aria-hidden
-            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-400 via-accent-500 to-leaf-500"
+            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-300 via-accent-400 to-accent-200"
           />
         </div>
 
@@ -444,7 +444,7 @@ export function CtaBanner() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(9,28,45,.80) 0%, rgba(9,28,45,.52) 42%, rgba(9,28,45,.28) 72%, rgba(19,60,92,.34) 100%)",
+              "linear-gradient(90deg, rgba(10,22,45,.80) 0%, rgba(10,22,45,.52) 42%, rgba(10,22,45,.28) 72%, rgba(20,44,82,.34) 100%)",
           }}
         />
       </div>
@@ -454,7 +454,7 @@ export function CtaBanner() {
           {/* Soft brand watermark, echoing the reference card */}
           <span
             aria-hidden
-            className="pointer-events-none absolute -right-10 -bottom-12 h-52 w-52 rounded-full bg-leaf-500/10"
+            className="pointer-events-none absolute -right-10 -bottom-12 h-52 w-52 rounded-full bg-accent-500/10"
           />
           <span
             aria-hidden
@@ -482,7 +482,7 @@ export function CtaBanner() {
                 className="group inline-flex items-center gap-3 rounded-full bg-brand-600 py-3.5 pr-3.5 pl-7 text-sm font-bold tracking-wide text-white uppercase shadow-lg shadow-brand-600/25 transition-all hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-600/30"
               >
                 Contact us
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-leaf-500 text-white transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="grid h-8 w-8 place-items-center rounded-full bg-accent-500 text-white transition-transform duration-300 group-hover:translate-x-0.5">
                   <ArrowRight className="h-4 w-4" />
                 </span>
               </Link>
@@ -502,7 +502,7 @@ export function CtaBanner() {
                   key={a}
                   className="flex items-center gap-2 text-xs font-medium text-ink-muted"
                 >
-                  <Check className="h-3.5 w-3.5 text-leaf-600" />
+                  <Check className="h-3.5 w-3.5 text-accent-600" />
                   {a}
                 </li>
               ))}

@@ -63,7 +63,7 @@ export default function AboutPage() {
             <ul className="mt-8 space-y-3.5">
               {highlights.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-leaf-500/15 text-leaf-600">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-accent-500/15 text-accent-600">
                     <Check className="h-3 w-3" />
                   </span>
                   <span className="text-sm leading-relaxed">{item}</span>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                     key={a}
                     className="flex items-center gap-1.5 rounded-full bg-[var(--bg-2)] px-2.5 py-1 text-xs font-medium"
                   >
-                    <Check className="h-3 w-3 text-leaf-600" />
+                    <Check className="h-3 w-3 text-accent-600" />
                     {a}
                   </li>
                 ))}

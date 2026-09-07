@@ -1,34 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand scale derived from the CA India logo navy (#185888) */
-  --color-brand-50: #f1f7fb;
-  --color-brand-100: #dceaf4;
-  --color-brand-200: #bcd7e9;
-  --color-brand-300: #8ebad6;
-  --color-brand-400: #5896bd;
-  --color-brand-500: #2f76a3;
-  --color-brand-600: #185888;
-  --color-brand-700: #14486f;
-  --color-brand-800: #133c5c;
-  --color-brand-900: #12334d;
+  /* Navy from the Apex Radiant wordmark (#00163B) */
+  --color-brand-50: #f3f6fa;
+  --color-brand-100: #e3eaf4;
+  --color-brand-200: #c6d3e6;
+  --color-brand-300: #9aaecb;
+  --color-brand-400: #6280ab;
+  --color-brand-500: #365688;
+  --color-brand-600: #1d3c6b;
+  --color-brand-700: #142c52;
+  --color-brand-800: #0c1e3c;
+  --color-brand-900: #00163b;
 
-  /* Saffron from the logo tricolour swoosh (#F57921) */
-  --color-accent-300: #fbb984;
-  --color-accent-400: #f99a55;
-  --color-accent-500: #f57921;
-  --color-accent-600: #d9620f;
+  /* Gold from the eagle mark and "APEX" (#B38743 / #F8C462) */
+  --color-accent-50: #fdf9f0;
+  --color-accent-100: #f8eed8;
+  --color-accent-200: #f3e2ba;
+  --color-accent-300: #ecd6a4;
+  --color-accent-400: #dcbb6f;
+  --color-accent-500: #c39a45;
+  --color-accent-600: #a3792c;
+  --color-accent-700: #82601f;
 
-  /* Green from the logo tricolour swoosh (#52B946) */
-  --color-leaf-400: #7bcc70;
-  --color-leaf-500: #52b946;
-  --color-leaf-600: #3f9c36;
-
-  --color-ink: #0c1620;
-  --color-ink-muted: #55657a;
+  --color-ink: #10192b;
+  --color-ink-muted: #5d6478;
   --color-surface: #ffffff;
-  --color-surface-2: #f4f8fb;
-  --color-line: #e1e9f0;
+  --color-surface-2: #faf4ea;
+  --color-line: #ebe3d6;
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -62,10 +61,10 @@
 
 :root {
   --bg: #ffffff;
-  --bg-2: #f4f8fb;
-  --fg: #0c1620;
-  --fg-muted: #55657a;
-  --line: #e1e9f0;
+  --bg-2: #faf4ea;
+  --fg: #10192b;
+  --fg-muted: #5d6478;
+  --line: #ebe3d6;
   --card: #ffffff;
   color-scheme: light;
 }
@@ -82,12 +81,12 @@
    a theme toggle later. */
 
 :root[data-theme="dark"] {
-  --bg: #070d14;
-  --bg-2: #0d1620;
-  --fg: #eef3f8;
-  --fg-muted: #96a6b8;
-  --line: #1c2836;
-  --card: #0f1a26;
+  --bg: #060d1c;
+  --bg-2: #0b1730;
+  --fg: #f2f0e9;
+  --fg-muted: #9aa3b5;
+  --line: #1d2b46;
+  --card: #0d1a33;
   color-scheme: dark;
 }
 

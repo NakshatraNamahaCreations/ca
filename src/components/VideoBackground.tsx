@@ -80,7 +80,7 @@ export default function VideoBackground({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, #123049 0%, #1b567f 48%, #2b7cae 100%)",
+            "linear-gradient(135deg, #0c1e3c 0%, #1d3c6b 48%, #365688 100%)",
         }}
       />
 
@@ -112,7 +112,7 @@ export default function VideoBackground({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(100deg, rgba(6,15,23,.76) 0%, rgba(6,15,23,.58) 34%, rgba(6,15,23,.30) 62%, rgba(6,15,23,.22) 100%)",
+            "linear-gradient(100deg, rgba(6,13,28,.76) 0%, rgba(6,13,28,.58) 34%, rgba(6,13,28,.30) 62%, rgba(6,13,28,.22) 100%)",
         }}
       />
       {/* Brand tint + bottom fade into the page */}
@@ -121,7 +121,7 @@ export default function VideoBackground({
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(48rem 30rem at 84% 12%, rgba(24,88,136,.18), transparent 62%), linear-gradient(to bottom, transparent 82%, rgba(6,15,23,.42) 100%)",
+            "radial-gradient(48rem 30rem at 84% 12%, rgba(29,60,107,.18), transparent 62%), linear-gradient(to bottom, transparent 82%, rgba(6,13,28,.42) 100%)",
         }}
       />
 

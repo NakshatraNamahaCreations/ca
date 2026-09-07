@@ -35,7 +35,7 @@ export default function Faq({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(38rem 22rem at 0% 0%, rgba(24,88,136,.06), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(245,121,33,.05), transparent 65%)",
+            "radial-gradient(38rem 22rem at 0% 0%, rgba(29,60,107,.06), transparent 62%), radial-gradient(28rem 18rem at 100% 100%, rgba(195,154,69,.05), transparent 65%)",
         }}
       />
 
@@ -51,7 +51,7 @@ export default function Faq({
             </h2>
             <span
               aria-hidden
-              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-600 via-accent-500 to-leaf-500"
+              className="mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
             />
             {body ? (
               <p className="mt-6 text-base leading-relaxed text-pretty text-ink-muted">
@@ -95,8 +95,8 @@ export default function Faq({
                   className={cn(
                     "overflow-hidden rounded-2xl border bg-white transition-all duration-300",
                     isOpen
-                      ? "border-brand-200 shadow-[0_18px_40px_-16px_rgba(24,88,136,.25)]"
-                      : "border-[#e6edf3] hover:border-brand-200 hover:shadow-[0_10px_24px_-14px_rgba(24,88,136,.2)]"
+                      ? "border-brand-200 shadow-[0_18px_40px_-16px_rgba(29,60,107,.25)]"
+                      : "border-[#ece5d9] hover:border-brand-200 hover:shadow-[0_10px_24px_-14px_rgba(29,60,107,.2)]"
                   )}
                 >
                   <h3>
