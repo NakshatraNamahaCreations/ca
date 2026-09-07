@@ -12,6 +12,7 @@ export default function Faq({
   body = "Quick answers about our financial, compliance, and legal services. If you need anything else, our team is a call away.",
   alt = false,
   support = true,
+  id,
 }: {
   items: { q: string; a: string }[];
   eyebrow?: string;
@@ -20,11 +21,14 @@ export default function Faq({
   alt?: boolean;
   /** Show the "still have questions" card beside the list. */
   support?: boolean;
+  /** Anchor id, so the header menu can scroll to it. */
+  id?: string;
 }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section
+      id={id}
       className={cn(
         "relative overflow-hidden py-16 sm:py-24",
         alt ? "bg-[var(--bg-2)]" : "bg-white"

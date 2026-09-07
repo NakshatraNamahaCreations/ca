@@ -15,6 +15,7 @@ import { faqs } from "@/data/site";
 export default function HomePage() {
   return (
     <>
+      <span id="top" aria-hidden />
       <Hero />
       <ServicesCarousel />
       <AboutPreview />
@@ -22,7 +23,7 @@ export default function HomePage() {
       <CaseStudies />
       <Testimonials />
       <ServiceAreas />
-      <Faq items={faqs} alt />
+      <Faq items={faqs} alt id="faq" />
       <BlogPreview />
       <CtaBanner />
     </>

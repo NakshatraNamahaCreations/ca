@@ -102,6 +102,11 @@
     scroll-behavior: smooth;
   }
 
+  /* Keep anchored sections clear of the sticky header when the menu jumps. */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   body {
     background-color: var(--bg);
     color: var(--fg);

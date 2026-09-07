@@ -57,11 +57,20 @@ export const site = {
 } as const;
 
 /**
- * Menu items. Currently NOT rendered anywhere: the header and footer menus were
- * removed so visitors stay on the home page. The pages themselves still exist
- * and are reachable by URL - re-render this list to bring the menu back.
+ * Header menu. These are in-page anchors, not page links: everything the menu
+ * points at is a section of the home page, so visitors never navigate away.
+ * The standalone pages still exist and are reachable by URL.
  */
 export const nav = [
+  { href: "/#top", label: "Home", id: "top" },
+  { href: "/#services", label: "Our Services", id: "services" },
+  { href: "/#about", label: "About Us", id: "about" },
+  { href: "/#faq", label: "FAQ", id: "faq" },
+  { href: "/#contact", label: "Contact", id: "contact" },
+];
+
+/** Kept for the sitemap and for restoring page-based navigation later. */
+export const pageNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Our Services" },

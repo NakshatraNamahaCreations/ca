@@ -20,7 +20,10 @@ import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
 
 export function AboutPreview() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+    <section
+      id="about"
+      className="relative overflow-hidden bg-white py-16 sm:py-24"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -428,7 +431,7 @@ export function ServiceAreas() {
 
 export function CtaBanner() {
   return (
-    <section className="relative isolate overflow-hidden">
+    <section id="contact" className="relative isolate overflow-hidden">
       {/* Full-bleed still lifted from the banner video */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <Image
