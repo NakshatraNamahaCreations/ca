@@ -1,3 +1,35 @@
+/**
+ * Absolute site URL used for canonical links, Open Graph, sitemap and robots.
+ *
+ * `??` alone is not enough: an env var that is *defined but empty* (which is
+ * what a blank value in the Vercel dashboard produces) passes through `??` and
+ * then crashes `new URL("")` at build time. So validate before trusting it, and
+ * fall back to the deployment URL Vercel injects automatically.
+ */
+function resolveSiteUrl(): string {
+  const candidates = [
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.NEXT_PUBLIC_VERCEL_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.VERCEL_URL,
+  ];
+
+  for (const candidate of candidates) {
+    const value = candidate?.trim();
+    if (!value) continue;
+
+    const withScheme = /^https?:\/\//.test(value) ? value : `https://${value}`;
+    try {
+      return new URL(withScheme).origin;
+    } catch {
+      // Ignore a malformed value and try the next candidate.
+    }
+  }
+
+  return "https://www.radiantcompanyservices.com";
+}
+
 export const site = {
   name: "Radiant Company Services",
   shortName: "Radiant",
@@ -14,7 +46,7 @@ export const site = {
   address:
     "321, Lodha Signet, Kolshet Rd, Kolshet Industrial Area, Thane West, Maharashtra 400604",
   hours: "Monday - Saturday, 10 AM - 7 PM",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.radiantcompanyservices.com",
+  url: resolveSiteUrl(),
   // Social links are not shown anywhere on the site at the moment. Add real
   // profile URLs here and render them if you want icons back in the footer.
   social: {
