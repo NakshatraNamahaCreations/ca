@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { areas, nav, services, site, workingHours } from "@/data/site";
+import { areas, services, site, workingHours } from "@/data/site";
 import { MapPin, Phone } from "./Icons";
 import Logo from "./Logo";
 
@@ -88,19 +88,6 @@ export default function Footer() {
               </li>
             </ul>
 
-            <h3 className="mt-6 text-sm font-semibold">Company</h3>
-            <ul className="mt-3 space-y-2.5">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="muted text-sm transition-colors hover:text-brand-600"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 

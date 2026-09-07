@@ -56,6 +56,11 @@ export const site = {
   },
 } as const;
 
+/**
+ * Menu items. Currently NOT rendered anywhere: the header and footer menus were
+ * removed so visitors stay on the home page. The pages themselves still exist
+ * and are reachable by URL - re-render this list to bring the menu back.
+ */
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
