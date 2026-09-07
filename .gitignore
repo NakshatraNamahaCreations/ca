@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+.vercel
+next-env.d.ts
+*.tsbuildinfo
+
+# Unreferenced duplicate of public/media/hero.mp4 (byte-identical, 16 MB).
+# Kept on disk but out of the repo so it doesn't bloat history.
+/public/7593785-hd_1920_1080_25fps.mp4
