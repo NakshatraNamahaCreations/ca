@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { leadership } from "@/data/site";
 import { Check } from "./Icons";
 
@@ -55,14 +56,25 @@ export default function Leadership() {
                       "radial-gradient(18rem 10rem at 100% 0%, rgba(195,154,69,.28), transparent 62%)",
                   }}
                 />
-                <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/12 text-lg font-bold text-white ring-1 ring-white/25 backdrop-blur-sm">
-                  {person.name
-                    .replace(/^CA\s+/, "")
-                    .split(" ")
-                    .map((w) => w[0])
-                    .slice(0, 2)
-                    .join("")}
-                </span>
+                {"photo" in person && person.photo ? (
+                  <Image
+                    src={person.photo}
+                    alt={person.name}
+                    width={56}
+                    height={56}
+                    sizes="56px"
+                    className="relative h-14 w-14 shrink-0 rounded-2xl object-cover ring-1 ring-white/30"
+                  />
+                ) : (
+                  <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/12 text-lg font-bold text-white ring-1 ring-white/25 backdrop-blur-sm">
+                    {person.name
+                      .replace(/^CA\s+/, "")
+                      .split(" ")
+                      .map((w) => w[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </span>
+                )}
                 <div className="relative min-w-0">
                   <h3 className="text-lg leading-tight font-bold text-white">
                     {person.name}

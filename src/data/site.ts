@@ -378,6 +378,7 @@ export const leadership = [
   {
     name: "CA Sanjay Johary",
     role: "Founder",
+    photo: "/media/team/sanjay-johary.jpg",
     tenure: "30+ years",
     background:
       "Senior finance leadership across large manufacturing and corporate environments.",
