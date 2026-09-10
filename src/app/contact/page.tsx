@@ -49,7 +49,7 @@ export default function ContactPage() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">Reach us</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-ink">Reach us</h2>
 
             <div className="mt-7 space-y-4">
               {channels.map((c) => (
@@ -60,13 +60,13 @@ export default function ContactPage() {
                   rel={
                     c.href.startsWith("http") ? "noopener noreferrer" : undefined
                   }
-                  className="surface group flex items-start gap-4 rounded-2xl p-5 transition-all hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-lg"
+                  className="group flex items-start gap-4 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-16px_rgba(29,60,107,.28)]"
                 >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600/10 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
                     {c.icon}
                   </span>
                   <span className="min-w-0">
-                    <span className="muted block text-xs font-semibold uppercase">
+                    <span className="block text-[11px] font-bold tracking-[0.14em] text-accent-600 uppercase">
                       {c.label}
                     </span>
                     <span className="mt-1 block text-[15px] font-semibold break-words">
@@ -80,7 +80,7 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="surface mt-6 rounded-2xl p-5">
+            <div className="mt-6 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)]">
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
                 <div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="surface mt-6 rounded-2xl p-5">
+            <div className="mt-6 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)]">
               <h3 className="text-sm font-semibold">We are active in</h3>
               <p className="muted mt-2.5 text-sm leading-relaxed">
                 {areas.join(", ")}.
@@ -129,7 +129,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">
+            <h2 className="text-2xl font-bold tracking-tight text-ink">
               Request a Consultation
             </h2>
             <p className="muted mt-3 text-sm leading-relaxed">

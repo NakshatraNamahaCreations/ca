@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 const tints = [
   "from-brand-700 to-brand-900",
   "from-brand-600 to-brand-800",
-  "from-slate-700 to-brand-900",
-  "from-brand-800 to-slate-900",
+  "from-brand-800 to-brand-900",
+  "from-brand-900 to-brand-700",
 ];
 
 const icons = [
@@ -74,7 +74,7 @@ export default function GalleryPage() {
                   className="pointer-events-none absolute inset-0 opacity-70"
                   style={{
                     background:
-                      "radial-gradient(20rem 14rem at 80% 10%, rgba(255,171,31,.28), transparent 60%)",
+                      "radial-gradient(20rem 14rem at 80% 10%, rgba(195,154,69,.34), transparent 62%)",
                   }}
                 />
                 <span className="relative grid h-11 w-11 place-items-center rounded-xl border border-white/20 bg-white/12 text-white backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
@@ -107,7 +107,7 @@ export default function GalleryPage() {
           {services.map((s) => (
             <span
               key={s.slug}
-              className="surface flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium"
+              className="flex items-center gap-2 rounded-full border border-[#ece5d9] bg-white px-4 py-2.5 text-sm font-medium text-ink shadow-[0_1px_2px_rgba(16,25,43,.04)]"
             >
               <ServiceIcon name={s.icon} className="h-4 w-4 text-brand-600" />
               {s.title}

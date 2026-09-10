@@ -121,12 +121,25 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("max-w-2xl", center && "mx-auto text-center")}>
-      {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-      <h2 className="mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+      {eyebrow ? (
+        <span className="text-xs font-semibold tracking-[0.18em] text-accent-600 uppercase">
+          {eyebrow}
+        </span>
+      ) : null}
+      <h2 className="mt-4 text-3xl leading-[1.14] font-bold tracking-tight text-balance text-ink sm:text-[2.4rem]">
         {title}
       </h2>
+      <span
+        aria-hidden
+        className={cn(
+          "mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300",
+          center && "mx-auto"
+        )}
+      />
       {body ? (
-        <p className="muted mt-4 text-base leading-relaxed text-pretty">{body}</p>
+        <p className="mt-6 text-base leading-relaxed text-pretty text-ink-muted">
+          {body}
+        </p>
       ) : null}
     </div>
   );

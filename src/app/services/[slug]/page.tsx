@@ -71,24 +71,24 @@ export default async function ServiceDetailPage({ params }: Params) {
               {service.includes.map((item) => (
                 <li
                   key={item}
-                  className="surface flex items-start gap-3 rounded-xl p-4"
+                  className="flex items-start gap-3 rounded-xl border border-[#ece5d9] bg-white p-4 shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-[0_14px_30px_-14px_rgba(29,60,107,.25)]"
                 >
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-600/12 text-brand-600">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md bg-accent-500/12 text-accent-600 ring-1 ring-accent-500/25">
                     <Check className="h-3 w-3" />
                   </span>
-                  <span className="text-sm leading-relaxed">{item}</span>
+                  <span className="text-sm leading-relaxed text-ink">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 rounded-2xl border border-brand-200 bg-brand-50 p-6 dark:border-brand-800 dark:bg-brand-900/20">
+            <div className="mt-10 overflow-hidden rounded-2xl bg-brand-700 p-6 shadow-xl shadow-brand-900/20">
               <div className="flex items-start gap-3">
-                <Shield className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+                <Shield className="mt-0.5 h-5 w-5 shrink-0 text-accent-400" />
                 <div>
-                  <h3 className="text-sm font-semibold">
+                  <h3 className="text-sm font-bold text-white">
                     Compliance-first, always on time
                   </h3>
-                  <p className="muted mt-2 text-sm leading-relaxed">
+                  <p className="mt-2 text-sm leading-relaxed text-brand-100">
                     Every engagement runs on a deadline calendar shared with you,
                     so filings are prepared ahead of the due date rather than on
                     it. You are told what is required and by when.
@@ -100,11 +100,11 @@ export default async function ServiceDetailPage({ params }: Params) {
 
           {/* Enquiry sidebar */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="surface rounded-2xl p-6 shadow-xl shadow-brand-900/5">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-600/10 text-brand-600">
+            <div className="rounded-2xl border border-[#ece5d9] bg-white p-6 shadow-[0_18px_44px_-18px_rgba(29,60,107,.28)]">
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
                 <ServiceIcon name={service.icon} className="h-6 w-6" />
               </span>
-              <h2 className="mt-4 text-lg font-semibold">{service.title}</h2>
+              <h2 className="mt-4 text-lg font-bold text-ink">{service.title}</h2>
               <p className="muted mt-1.5 text-sm leading-relaxed">
                 {service.short}
               </p>
@@ -161,12 +161,12 @@ export default async function ServiceDetailPage({ params }: Params) {
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="surface group rounded-2xl p-5 transition-all hover:-translate-y-1 hover:border-brand-500 hover:shadow-lg"
+              className="group rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_20px_44px_-16px_rgba(29,60,107,.28)]"
             >
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-600/10 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
                 <ServiceIcon name={s.icon} className="h-5 w-5" />
               </span>
-              <h3 className="mt-4 text-sm font-semibold">{s.title}</h3>
+              <h3 className="mt-4 text-sm font-bold text-ink">{s.title}</h3>
               <p className="muted mt-1.5 text-sm leading-relaxed">{s.short}</p>
             </Link>
           ))}
