@@ -1,6 +1,6 @@
 import Image from "next/image";
 import banner from "@/../public/media/banner.jpg";
-import { areas, site, stats } from "@/data/site";
+import { areas, site } from "@/data/site";
 import { ButtonLink } from "./ui";
 import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
 
@@ -100,19 +100,6 @@ export default function Hero() {
 
         </div>
 
-        {/* Stats strip */}
-        <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md sm:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="bg-white/5 px-5 py-6 text-center">
-              <dt className="text-2xl font-bold text-white sm:text-3xl">
-                {s.value}
-              </dt>
-              <dd className="mt-1.5 text-[11px] tracking-wide text-white/60 uppercase">
-                {s.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );
