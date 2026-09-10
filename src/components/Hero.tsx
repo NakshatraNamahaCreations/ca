@@ -1,12 +1,51 @@
-import { site, stats } from "@/data/site";
+import Image from "next/image";
+import mark from "@/../public/brand/mark.png";
+import { areas, site, stats } from "@/data/site";
 import { ButtonLink } from "./ui";
-import VideoBackground from "./VideoBackground";
-import { ArrowRight, Check, Phone, Shield } from "./Icons";
+import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
 
 export default function Hero() {
   return (
-    <section className="relative isolate -mt-20 flex min-h-[40rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[46rem]">
-      <VideoBackground src="/media/hero.mp4" className="-z-10" />
+    <section className="relative isolate -mt-20 flex min-h-[38rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[44rem]">
+      {/* Navy ground drawn from the brand palette */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-30"
+        style={{
+          background:
+            "linear-gradient(135deg, #00163b 0%, #0c1e3c 48%, #1d3c6b 100%)",
+        }}
+      />
+
+      {/* Soft gold light, so the flat navy has depth */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-20"
+        style={{
+          background:
+            "radial-gradient(52rem 30rem at 82% 12%, rgba(195,154,69,.20), transparent 62%), radial-gradient(40rem 26rem at 5% 95%, rgba(54,86,136,.45), transparent 65%)",
+        }}
+      />
+
+      {/* Fine diagonal weave - texture without pattern noise */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-20 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 11px)",
+        }}
+      />
+
+      {/* The eagle, held back as a watermark */}
+      <Image
+        src={mark}
+        alt=""
+        aria-hidden
+        priority
+        sizes="700px"
+        className="pointer-events-none absolute top-1/2 -right-24 -z-10 hidden w-[44rem] -translate-y-1/2 opacity-[0.07] lg:block"
+      />
 
       <div className="container-x relative w-full pt-36 pb-20 lg:pt-40 lg:pb-24">
         <div className="animate-fade-up max-w-3xl text-white">
@@ -17,18 +56,30 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-7 text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]">
+          <h1 className="mt-7 text-[2.6rem] leading-[1.06] font-bold tracking-tight text-balance sm:text-5xl lg:text-[3.9rem]">
             Income Tax and GST
             <span className="mt-1 block text-white">filings made simple</span>
           </h1>
 
+          {/* Short company information */}
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-pretty text-white/75">
-            From accurate filings to smart planning, we handle your tax and GST
-            needs with clarity and on-time compliance to reduce risk and save
-            effort.
+            {site.name} is a chartered accountancy and consulting firm based in
+            Thane, serving businesses across the Mumbai region. We handle income
+            tax and GST filings, statutory compliance, legal drafting and Virtual
+            CFO support &mdash; with fixed scope, clear process and on-time
+            delivery.
           </p>
 
-          <ul className="mt-9 flex flex-wrap gap-x-8 gap-y-3.5">
+          <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-white/70">
+            <span className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 shrink-0 text-white/80" />
+              {areas.join(" · ")}
+            </span>
+            <span className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span>{site.hours}</span>
+          </div>
+
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:max-w-xl">
             {[
               "Income tax & GST filing",
               "Virtual CFO support",
@@ -47,13 +98,13 @@ export default function Hero() {
             ))}
           </ul>
 
-          <div className="mt-11 flex flex-wrap gap-3">
-            <ButtonLink href="/contact" variant="white" size="lg">
-              Get a consultation
-              <ArrowRight className="h-4 w-4" />
+          <div className="mt-10 flex flex-wrap gap-3">
+            <ButtonLink href={site.phoneHref} variant="white" size="lg">
+              <Phone className="h-4 w-4" />
+              Book a consultation
             </ButtonLink>
             <ButtonLink
-              href="/services"
+              href="/#services"
               size="lg"
               className="border border-white/25 bg-white/10 text-white shadow-none backdrop-blur-md hover:bg-white/20"
             >
@@ -64,19 +115,17 @@ export default function Hero() {
 
           <a
             href={site.phoneHref}
-            className="mt-9 inline-flex flex-wrap items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white"
+            className="mt-8 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white"
           >
             <Phone className="h-4 w-4 shrink-0 text-white/80" />
             Call: {site.phone}
-            <span className="text-white/40">&middot;</span>
-            <span className="text-white/50">{site.hours}</span>
           </a>
         </div>
 
         {/* Stats strip */}
-        <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md sm:grid-cols-4">
+        <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md sm:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="bg-black/25 px-5 py-6 text-center">
+            <div key={s.label} className="bg-white/5 px-5 py-6 text-center">
               <dt className="text-2xl font-bold text-white sm:text-3xl">
                 {s.value}
               </dt>
