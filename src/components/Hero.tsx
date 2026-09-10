@@ -98,13 +98,6 @@ export default function Hero() {
             </ButtonLink>
           </div>
 
-          <a
-            href={site.phoneHref}
-            className="mt-8 inline-flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white"
-          >
-            <Phone className="h-4 w-4 shrink-0 text-white/80" />
-            Call: {site.phone}
-          </a>
         </div>
 
         {/* Stats strip */}
