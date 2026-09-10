@@ -115,13 +115,17 @@ identifiable people need a model release.
 
 ## Branding
 
-The logo is `public/brand/logo.jpg` (also used as the favicon via
-`src/app/icon.jpg`) and is rendered by `src/components/Logo.tsx`.
+The logo is `public/brand/mark.png` - the gold eagle cut out of the Apex Radiant
+brand card, with the cream background keyed to transparency. It is rendered by
+`src/components/Logo.tsx` alongside the wordmark, which is set in type rather
+than baked into the image so it stays crisp at any size.
 
-Because the supplied artwork is a JPEG with a white background, the logo is
-always placed on a white rounded tile. That keeps it legible on the dark video
-banner without needing a cut-out version. If you get a transparent PNG/SVG,
-drop it in and remove the white tile from `Logo.tsx`.
+Because the mark is transparent it needs no backing tile: gold reads cleanly on
+both the dark video banner and the white header. `src/app/icon.png` is the
+square tab icon (the same mark on navy). If a vector version of the logo turns
+up, swapping `mark.png` for an SVG is a one-line change.
+
+`public/brand/logo.jpg` is the older CA India mark, kept but no longer used.
 
 The palette is defined in the `@theme` block of `src/app/globals.css`:
 
