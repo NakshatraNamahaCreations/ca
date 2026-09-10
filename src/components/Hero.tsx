@@ -6,7 +6,7 @@ import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
 
 export default function Hero() {
   return (
-    <section className="relative isolate -mt-20 flex min-h-[38rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[44rem]">
+    <section className="relative isolate -mt-20 flex min-h-[34rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[40rem]">
       {/* Banner photograph */}
       <Image
         src={banner}
@@ -16,7 +16,7 @@ export default function Hero() {
         priority
         sizes="100vw"
         placeholder="blur"
-        className="-z-30 object-cover object-center"
+        className="-z-30 object-cover object-[78%_50%]"
       />
 
       {/* Navy scrim: heavy at the left so the copy always has contrast */}
@@ -25,19 +25,10 @@ export default function Hero() {
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "linear-gradient(100deg, rgba(0,22,59,.92) 0%, rgba(0,22,59,.76) 40%, rgba(6,20,45,.46) 70%, rgba(6,20,45,.38) 100%)",
+            "linear-gradient(100deg, rgba(0,22,59,.96) 0%, rgba(0,22,59,.94) 30%, rgba(0,22,59,.78) 48%, rgba(0,22,59,.34) 64%, rgba(0,22,59,0) 78%)",
         }}
       />
 
-      {/* Soft gold light, so the flat navy has depth */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-20"
-        style={{
-          background:
-            "radial-gradient(48rem 28rem at 84% 12%, rgba(195,154,69,.16), transparent 62%)",
-        }}
-      />
 
 
 
