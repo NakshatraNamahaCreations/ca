@@ -1,105 +1,84 @@
 import Image from "next/image";
 import banner from "@/../public/media/banner.jpg";
-import { areas, site } from "@/data/site";
+import { site } from "@/data/site";
 import { ButtonLink } from "./ui";
-import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
+import { ArrowRight, Phone, Shield } from "./Icons";
 
 export default function Hero() {
   return (
-    <section className="relative isolate -mt-20 flex min-h-[34rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[40rem]">
-      {/* Banner photograph */}
-      <Image
-        src={banner}
-        alt=""
-        aria-hidden
-        fill
-        priority
-        sizes="100vw"
-        placeholder="blur"
-        className="-z-30 object-cover object-[78%_50%]"
-      />
+    <section className="relative isolate -mt-20 overflow-hidden bg-brand-900 sm:-mt-24">
+      {/* The artwork is shown whole: width 100%, height from its own aspect
+          ratio, so nothing is ever cropped off the sides. */}
+      <div className="relative pt-20 sm:pt-24">
+        <Image
+          src={banner}
+          alt=""
+          aria-hidden
+          priority
+          sizes="100vw"
+          placeholder="blur"
+          className="h-auto w-full"
+        />
 
-      {/* Navy scrim: heavy at the left so the copy always has contrast */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-20"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(0,22,59,.96) 0%, rgba(0,22,59,.94) 30%, rgba(0,22,59,.78) 48%, rgba(0,22,59,.34) 64%, rgba(0,22,59,0) 78%)",
-        }}
-      />
+        {/* Scrim and overlaid copy only where the banner is tall enough to
+            hold them; below lg the copy sits underneath the artwork instead. */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-20 bottom-0 hidden lg:block sm:top-24"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(0,22,59,.94) 0%, rgba(0,22,59,.90) 26%, rgba(0,22,59,.72) 44%, rgba(0,22,59,.28) 60%, rgba(0,22,59,0) 74%)",
+          }}
+        />
 
+        {/* A short scrim along the very top only, so the header stays legible
+            wherever the artwork happens to be bright, without dimming it. */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-20 h-24 sm:top-24 sm:h-28"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,22,59,.62) 0%, rgba(0,22,59,.28) 55%, transparent 100%)",
+          }}
+        />
 
-
-
-      <div className="container-x relative w-full pt-36 pb-20 lg:pt-40 lg:pb-24">
-        <div className="animate-fade-up max-w-3xl text-white">
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
-            <Shield className="h-4 w-4 text-white/80" />
-            <span className="text-xs font-semibold tracking-wide text-white/90 uppercase">
-              {site.tagline}
-            </span>
-          </div>
-
-          <h1 className="mt-7 text-[2.6rem] leading-[1.06] font-bold tracking-tight text-balance sm:text-5xl lg:text-[3.9rem]">
-            Income Tax and GST
-            <span className="mt-1 block text-white">filings made simple</span>
-          </h1>
-
-          {/* Short company information */}
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-pretty text-white/75">
-            {site.name} is a chartered accountancy and consulting firm based in
-            Thane, serving businesses across the Mumbai region. We handle income
-            tax and GST filings, statutory compliance, legal drafting and Virtual
-            CFO support &mdash; with fixed scope, clear process and on-time
-            delivery.
-          </p>
-
-          <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-white/70">
-            <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 shrink-0 text-white/80" />
-              {areas.join(" · ")}
-            </span>
-            <span className="hidden h-4 w-px bg-white/20 sm:block" />
-            <span>{site.hours}</span>
-          </div>
-
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:max-w-xl">
-            {[
-              "Income tax & GST filing",
-              "Virtual CFO support",
-              "Statutory compliance",
-              "Legal drafting",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-2.5 text-sm font-medium text-white/90"
-              >
-                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white text-brand-700">
-                  <Check className="h-3 w-3" />
+        <div className="lg:absolute lg:inset-x-0 lg:top-24 lg:bottom-0 lg:flex lg:items-center">
+          <div className="container-x w-full py-12 lg:py-6">
+            <div className="animate-fade-up max-w-xl text-white xl:max-w-2xl">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
+                <Shield className="h-4 w-4 text-white/80" />
+                <span className="text-[11px] font-semibold tracking-wide text-white/90 uppercase sm:text-xs">
+                  {site.tagline}
                 </span>
-                {item}
-              </li>
-            ))}
-          </ul>
+              </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <ButtonLink href={site.phoneHref} variant="white" size="lg">
-              <Phone className="h-4 w-4" />
-              Book a consultation
-            </ButtonLink>
-            <ButtonLink
-              href="/#services"
-              size="lg"
-              className="border border-white/25 bg-white/10 text-white shadow-none backdrop-blur-md hover:bg-white/20"
-            >
-              View services
-              <ArrowRight className="h-4 w-4" />
-            </ButtonLink>
+              <h1 className="mt-5 text-[2rem] leading-[1.08] font-bold tracking-tight text-balance sm:text-4xl lg:mt-6 lg:text-[2.5rem] xl:text-[3.2rem]">
+                Income Tax and GST
+                <span className="block text-white">filings made simple</span>
+              </h1>
+
+              <p className="mt-4 max-w-lg text-sm leading-relaxed text-pretty text-white/75 lg:mt-5 xl:text-base">
+                {site.name} handles income tax and GST filings, statutory
+                compliance, legal drafting and Virtual CFO support for
+                businesses across Thane and Mumbai.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3 lg:mt-7">
+                <ButtonLink href={site.phoneHref} variant="white">
+                  <Phone className="h-4 w-4" />
+                  Book a consultation
+                </ButtonLink>
+                <ButtonLink
+                  href="/#services"
+                  className="border border-white/25 bg-white/10 text-white shadow-none backdrop-blur-md hover:bg-white/20"
+                >
+                  View services
+                  <ArrowRight className="h-4 w-4" />
+                </ButtonLink>
+              </div>
+            </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
