@@ -257,9 +257,11 @@ export function CaseStudies() {
   );
 }
 
-// "We're the best option for your finances" - re-exported so the pages that
-// import { Testimonials } from "./Sections" keep working.
-export { default as Testimonials } from "./BestOption";
+// "We're the best option for your finances" - the features block.
+export { default as BestOption } from "./BestOption";
+
+// Client feedback carousel.
+export { default as Testimonials } from "./TestimonialsCarousel";
 
 export function BlogPreview() {
   return (

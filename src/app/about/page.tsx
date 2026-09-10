@@ -5,6 +5,7 @@ import {
   CtaBanner,
   HowItWorks,
   ServiceAreas,
+  BestOption,
   Testimonials,
 } from "@/components/Sections";
 import { Section, SectionHeading } from "@/components/ui";
@@ -133,6 +134,7 @@ export default function AboutPage() {
       <CaseStudies />
       <HowItWorks />
       <ServiceAreas />
+      <BestOption />
       <Testimonials />
       <CtaBanner />
     </>

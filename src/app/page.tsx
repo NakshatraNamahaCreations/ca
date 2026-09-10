@@ -3,6 +3,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Faq from "@/components/Faq";
 import {
   AboutPreview,
+  BestOption,
   BlogPreview,
   CaseStudies,
   CtaBanner,
@@ -21,6 +22,7 @@ export default function HomePage() {
       <AboutPreview />
       <HowItWorks />
       <CaseStudies />
+      <BestOption />
       <Testimonials />
       <ServiceAreas />
       <Faq items={faqs} alt id="faq" />
