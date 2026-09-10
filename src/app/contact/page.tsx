@@ -3,12 +3,12 @@ import PageHero from "@/components/PageHero";
 import Faq from "@/components/Faq";
 import ConsultationForm from "@/components/ConsultationForm";
 import { Section } from "@/components/ui";
-import { Check, Clock, MapPin, Phone, WhatsApp } from "@/components/Icons";
+import { Check, Clock, MapPin, Phone, Tax, WhatsApp } from "@/components/Icons";
 import { areas, assurances, faqs, site, workingHours } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Call ${site.phone} or send a consultation request. Radiant Company Services, ${site.address}. Open ${site.hours}.`,
+  description: `Call ${site.phone} or send a consultation request. ${site.name}, ${site.address}. Open ${site.hours}.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -109,6 +109,28 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
+
+            <a
+              href="/apex-radiant-firm-profile.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-6 flex items-start gap-4 rounded-2xl bg-brand-800 p-5 shadow-xl shadow-brand-900/20 transition-all duration-300 hover:-translate-y-1"
+            >
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/12 text-accent-400 ring-1 ring-white/20">
+                <Tax className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-[11px] font-bold tracking-[0.14em] text-accent-400 uppercase">
+                  Firm profile
+                </span>
+                <span className="mt-1 block text-[15px] font-semibold text-white">
+                  Download the 2026 firm profile
+                </span>
+                <span className="mt-1 block text-xs leading-relaxed text-brand-100">
+                  Service lines, leadership and representative experience (PDF)
+                </span>
+              </span>
+            </a>
 
             <div className="mt-6 rounded-2xl border border-[#ece5d9] bg-white p-5 shadow-[0_1px_2px_rgba(16,25,43,.04)]">
               <h3 className="text-sm font-semibold">We are active in</h3>

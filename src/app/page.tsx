@@ -7,6 +7,7 @@ import {
   CaseStudies,
   CtaBanner,
   HowItWorks,
+  Leadership,
   ServiceAreas,
   Testimonials,
 } from "@/components/Sections";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Hero />
       <ServicesCarousel />
       <AboutPreview />
+      <Leadership />
       <HowItWorks />
       <CaseStudies />
       <Testimonials />

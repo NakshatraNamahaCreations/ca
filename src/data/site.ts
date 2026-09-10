@@ -31,20 +31,19 @@ function resolveSiteUrl(): string {
 }
 
 export const site = {
-  name: "Radiant Company Services",
+  name: "Apex Radiant Consultants LLP",
   shortName: "Radiant",
-  legalName: "Elite Radiant Consultants LLP",
-  tagline: "Trusted CA and consultants",
+  legalName: "Apex Radiant Consultants LLP",
+  tagline: "Chartered Accountants · Tax Consultants · Virtual CFO",
   headline: "Income Tax and GST filings made simple",
   description:
-    "Professional CA and financial consultancy services helping businesses grow with compliance, clarity and financial confidence. Income tax, GST, Virtual CFO, legal drafting and statutory compliance across Thane, Mumbai and Navi Mumbai.",
+    "Thane-headquartered firm of Chartered Accountants with a specialist Goods and Services Tax practice, complete tax and compliance outsourcing, and a Virtual CFO capability. Serving listed and mid-market businesses across Mumbai.",
   phone: "+91 84548 16913",
   phoneHref: "tel:+918454816913",
   whatsapp: "918454816913",
-  // The reference site publishes no email address; update this before launch.
-  email: "info@radiantcompanyservices.com",
+  email: "radiantservicescompany@gmail.com",
   address:
-    "321, Lodha Signet, Kolshet Rd, Kolshet Industrial Area, Thane West, Maharashtra 400604",
+    "Lodha Signet, 321, Kolshet Road, Thane (West), Mumbai 400 607",
   hours: "Monday - Saturday, 10 AM - 7 PM",
   url: resolveSiteUrl(),
   // Social links are not shown anywhere on the site at the moment. Add real
@@ -351,11 +350,86 @@ export const consultationServices = [
   "Business Consulting",
 ];
 
+
+/**
+ * Leadership, from the 2026 firm profile. Sanjay Johary is taken from the
+ * "Meet The Founders" slide supplied alongside it.
+ */
+export const leadership = [
+  {
+    name: "CA Sanjay Johary",
+    role: "Founder",
+    tenure: "30+ years",
+    background:
+      "Senior finance leadership across large manufacturing and corporate environments.",
+    focus: [
+      "FP&A, budgeting, forecasting and management reporting",
+      "Cost optimization, working capital and treasury management",
+      "End-to-end accounting, taxation and statutory compliance",
+      "Process improvement, shared services and GST transition",
+    ],
+  },
+  {
+    name: "CA Rajkamal Singh",
+    role: "Founding Partner · Signing Partner, Tax & Regulatory",
+    tenure: "18+ years",
+    background:
+      "KPMG, Deloitte and PwC; senior finance and taxation roles with listed corporates including Birla Corporation, ACC and the Adani Group.",
+    focus: [
+      "GST classification and valuation disputes",
+      "Litigation from show-cause notice through appellate stage",
+      "Multi-State GSTR-9 and 9C engagements",
+      "Transfer pricing, permanent establishment and cross-border structuring",
+    ],
+  },
+  {
+    name: "CA Amandeep Kaur",
+    role: "Partner · Virtual CFO, Reporting & Assurance",
+    tenure: "11+ years",
+    background:
+      "Senior FP&A roles with Remsons Industries and Godrej & Boyce; audit practice with Kalyaniwalla & Mistry LLP.",
+    focus: [
+      "Budgeting, forecasting and variance analysis",
+      "Board and management reporting packs",
+      "Profitability by product, SKU and channel",
+      "Working capital, inventory and receivables control",
+    ],
+  },
+];
+
+/** "Why clients engage us", from the firm profile. */
+export const whyUs = [
+  {
+    title: "GST depth, not GST coverage",
+    body: "GST is the specialisation rather than one line on a list. The same team that files the return prepares the reconciliation and drafts the reply, so the position taken in the return is the position defended in the notice.",
+  },
+  {
+    title: "One provider, whole function",
+    body: "Indirect tax, direct tax, transfer pricing, payroll and corporate compliance run off a single set of books and a single calendar, which removes the reconciliation differences that arise when these are split across providers.",
+  },
+  {
+    title: "Large-firm method",
+    body: "Engagement letters, structured working papers, documented sampling and materiality, and Partner review on every deliverable.",
+  },
+  {
+    title: "Mid-market economics",
+    body: "Delivered without the cost structure, layered staffing or turnaround lag of a large network firm.",
+  },
+  {
+    title: "Litigation orientation",
+    body: "Advisory positions are taken with the notice in mind, so documentation is built at the advisory stage rather than reconstructed at assessment.",
+  },
+  {
+    title: "Continuity",
+    body: "Direct Partner access and a stable delivery team, so context is not lost between assignments.",
+  },
+];
+
 export const stats = [
-  { value: "10+", label: "Years of expertise" },
-  { value: "500+", label: "Happy clients" },
-  { value: "24x7", label: "Support" },
-  { value: "3", label: "Cities served" },
+  { value: "18+", label: "Years of partner experience" },
+  { value: "17", label: "Professionals across three verticals" },
+  { value: "290+", label: "Assessees in a filing season" },
+  { value: "₹2,500 cr+", label: "Client turnover served" },
 ];
 
 export const aboutIntro =
@@ -401,33 +475,35 @@ export const steps = [
   },
 ];
 
+/** Representative experience, from the firm profile. Client identities are not
+ *  disclosed; named references are available on request. */
 export const caseStudies = [
   {
-    slug: "cashflow-stability",
+    slug: "listed-manufacturer-gst",
     image: "/media/cases/cashflow-stability.jpg",
-    category: "Virtual CFO",
-    client: "Services Business",
-    title: "Cashflow stability for a growing services firm",
-    body: "We implemented monthly reporting, budgeting, and vendor payment discipline to improve visibility and control.",
-    outcomes: ["Cashflow Planning", "Monthly MIS", "Better Forecasting"],
+    category: "Goods & Services Tax",
+    client: "Listed manufacturer, PAN-India",
+    title: "GST annual return across ~20 State registrations",
+    body: "GSTR-9 and GSTR-9C preparation and review, books-to-returns turnover reconciliation, ITC bifurcation into inputs, input services and capital goods, fixed asset register review, and e-invoice and e-way bill reconciliation, delivered against statutory deadlines.",
+    outcomes: ["GSTR-9 & 9C", "Multi-State", "Turnover above ₹2,500 cr"],
   },
   {
-    slug: "simplified-filings",
-    image: "/media/cases/simplified-filings.jpg",
-    category: "Income Tax & GST",
-    client: "Startup and SME",
-    title: "Simplified filings and reduced compliance stress",
-    body: "Accurate filings and planning support helped avoid penalties and reduced last-minute documentation pressure.",
-    outcomes: ["On-time Returns", "Reduced Errors", "Improved Deductions"],
-  },
-  {
-    slug: "roc-compliance",
+    slug: "cross-border-services-group",
     image: "/media/cases/roc-compliance.jpg",
-    category: "Statutory Compliance",
-    client: "Private Limited Company",
-    title: "ROC and regulatory compliance made audit ready",
-    body: "We created a compliance calendar and handled ROC filings with documentation support and timeline control.",
-    outcomes: ["ROC Filings", "Compliance Calendar", "Audit Ready Docs"],
+    category: "International Tax",
+    client: "Cross-border services group, India and Europe",
+    title: "Permanent establishment and transfer pricing strategy",
+    body: "Permanent establishment and DAPE exposure assessment, inter-company charging model, treaty analysis and transfer pricing documentation strategy.",
+    outcomes: ["PE & DAPE review", "Treaty analysis", "TP documentation"],
+  },
+  {
+    slug: "owner-managed-filing-season",
+    image: "/media/cases/simplified-filings.jpg",
+    category: "Direct Tax",
+    client: "Owner-managed businesses and professionals",
+    title: "Filing season for 290+ assessees",
+    body: "Return filing season handled for a client base exceeding 290 assessees, together with faceless appellate representation before NFAC.",
+    outcomes: ["290+ assessees", "Faceless appeals", "NFAC representation"],
   },
 ];
 
@@ -456,7 +532,7 @@ export const areas = ["Thane", "Mumbai", "Navi Mumbai"];
 
 export const faqs = [
   {
-    q: "What does Radiant Company Services specialize in?",
+    q: "What does Apex Radiant specialize in?",
     a: "We offer end-to-end financial and legal solutions for businesses of all sizes. Our core services include chartered accountancy, business consultancy, income tax and GST filings, legal drafting, Virtual CFO support, strategic planning, and statutory compliance management.",
   },
   {
@@ -472,7 +548,7 @@ export const faqs = [
     a: "Absolutely. Our legal drafting services cover contracts, MOUs, partnership deeds, shareholder agreements, and more. We ensure your documents are legally sound, customized to your needs, and compliant with applicable laws.",
   },
   {
-    q: "Is Radiant Company Services right for startups or only established businesses?",
+    q: "Is Apex Radiant right for startups or only established businesses?",
     a: "We work with both. Whether you're launching a startup or managing an established company, we provide scalable services from initial business setup and registration to complex financial strategy and compliance support.",
   },
 ];

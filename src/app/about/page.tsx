@@ -4,6 +4,7 @@ import {
   CaseStudies,
   CtaBanner,
   HowItWorks,
+  Leadership,
   ServiceAreas,
   Testimonials,
 } from "@/components/Sections";
@@ -41,7 +42,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Radiant Company Services"
+        eyebrow="About the firm"
         title="Financial and legal support built for growing businesses"
         body={aboutIntro}
         breadcrumbs={[
@@ -130,6 +131,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <Leadership />
       <CaseStudies />
       <HowItWorks />
       <ServiceAreas />
