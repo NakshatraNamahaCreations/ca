@@ -3,8 +3,8 @@ import { leadership } from "@/data/site";
 import { Check } from "./Icons";
 
 /**
- * "Meet the founders" - the partners from the firm profile, each with tenure,
- * the practices they came from and what they focus on.
+ * "Meet the founders" - each partner led by a large portrait, with tenure, the
+ * practices they came from and what they focus on beneath it.
  */
 export default function Leadership() {
   return (
@@ -40,75 +40,80 @@ export default function Leadership() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {leadership.map((person) => (
-            <article
-              key={person.name}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-[#ece5d9] bg-white shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_22px_46px_-16px_rgba(29,60,107,.30)]"
-            >
-              {/* Monogram plate - a real portrait can replace this */}
-              <div className="relative flex items-center gap-4 bg-brand-800 p-6">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(18rem 10rem at 100% 0%, rgba(195,154,69,.28), transparent 62%)",
-                  }}
-                />
-                {"photo" in person && person.photo ? (
-                  <Image
-                    src={person.photo}
-                    alt={person.name}
-                    width={56}
-                    height={56}
-                    sizes="56px"
-                    className="relative h-14 w-14 shrink-0 rounded-2xl object-cover ring-1 ring-white/30"
+        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {leadership.map((person) => {
+            const photo = "photo" in person ? person.photo : undefined;
+
+            return (
+              <article
+                key={person.name}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-[#ece5d9] bg-white shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_26px_54px_-18px_rgba(29,60,107,.34)]"
+              >
+                {/* Portrait leads the card */}
+                <div className="relative aspect-4/5 overflow-hidden bg-brand-800">
+                  {photo ? (
+                    <Image
+                      src={photo}
+                      alt={person.name}
+                      fill
+                      sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <span className="absolute inset-0 grid place-items-center text-5xl font-bold text-white/25">
+                      {person.name
+                        .replace(/^CA\s+/, "")
+                        .split(" ")
+                        .map((w) => w[0])
+                        .slice(0, 2)
+                        .join("")}
+                    </span>
+                  )}
+
+                  {/* Name and role sit on the portrait */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(0,22,59,.94) 0%, rgba(0,22,59,.60) 26%, rgba(0,22,59,.10) 52%, transparent 72%)",
+                    }}
                   />
-                ) : (
-                  <span className="relative grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/12 text-lg font-bold text-white ring-1 ring-white/25 backdrop-blur-sm">
-                    {person.name
-                      .replace(/^CA\s+/, "")
-                      .split(" ")
-                      .map((w) => w[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </span>
-                )}
-                <div className="relative min-w-0">
-                  <h3 className="text-lg leading-tight font-bold text-white">
-                    {person.name}
-                  </h3>
-                  <p className="mt-1 text-[11px] font-semibold tracking-[0.12em] text-accent-400 uppercase">
-                    {person.role}
+
+                  <div className="absolute right-5 bottom-5 left-5">
+                    <span className="inline-flex rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase ring-1 ring-white/25 backdrop-blur-sm">
+                      {person.tenure}
+                    </span>
+                    <h3 className="mt-2.5 text-xl leading-tight font-bold text-white">
+                      {person.name}
+                    </h3>
+                    <p className="mt-1 text-[11px] leading-snug font-semibold tracking-[0.12em] text-accent-400 uppercase">
+                      {person.role}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="text-sm leading-relaxed text-ink-muted">
+                    {person.background}
                   </p>
+
+                  <ul className="mt-5 flex-1 space-y-2.5 border-t border-[#f2ece1] pt-5">
+                    {person.focus.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <span className="mt-0.5 grid h-4.5 w-4.5 shrink-0 place-items-center rounded-md bg-accent-500/12 text-accent-600 ring-1 ring-accent-500/25">
+                          <Check className="h-2.5 w-2.5" />
+                        </span>
+                        <span className="text-[13px] leading-relaxed text-ink">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-
-              <div className="flex flex-1 flex-col p-6">
-                <div className="inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 ring-1 ring-brand-100">
-                  {person.tenure}
-                </div>
-
-                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-                  {person.background}
-                </p>
-
-                <ul className="mt-5 flex-1 space-y-2.5 border-t border-[#f2ece1] pt-5">
-                  {person.focus.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <span className="mt-0.5 grid h-4.5 w-4.5 shrink-0 place-items-center rounded-md bg-accent-500/12 text-accent-600 ring-1 ring-accent-500/25">
-                        <Check className="h-2.5 w-2.5" />
-                      </span>
-                      <span className="text-[13px] leading-relaxed text-ink">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
