@@ -257,11 +257,8 @@ export function CaseStudies() {
   );
 }
 
-// "We're the best option for your finances" - the features block.
-export { default as BestOption } from "./BestOption";
-
-// Client feedback carousel.
-export { default as Testimonials } from "./TestimonialsCarousel";
+// "We're the best option for your finances" - carries the client quotes.
+export { default as Testimonials } from "./BestOption";
 
 export function BlogPreview() {
   return (
