@@ -17,8 +17,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our services"
-        title="Smart support for finance, tax, and compliance"
-        body="Reliable solutions built for growing businesses. Clear process, timely compliance, and expert guidance that keeps you confident."
+        title="GST, tax outsourcing and Virtual CFO"
+        body="A specialist Goods and Services Tax practice, a complete tax and compliance function delivered on outsourcing, and a Virtual CFO capability that turns the numbers into decisions."
         breadcrumbs={[
           { href: "/", label: "Home" },
           { href: "/services", label: "Our Services" },
@@ -26,8 +26,8 @@ export default function ServicesPage() {
       />
       <ServicesCarousel
         eyebrow="What we do"
-        title="End-to-end financial and legal solutions"
-        body="Nine service lines covering everything from incorporation and monthly filings to Virtual CFO support and legal documentation."
+        title="Three practice lines, one calendar"
+        body="Indirect tax, direct tax, transfer pricing, payroll and corporate compliance run off a single set of books, so the position taken in a return is the position defended in a notice."
       />
       <HowItWorks />
       <Faq items={faqs} />

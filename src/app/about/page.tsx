@@ -6,6 +6,7 @@ import {
   HowItWorks,
   Leadership,
   ServiceAreas,
+  WhyUs,
   Testimonials,
 } from "@/components/Sections";
 import { Section, SectionHeading } from "@/components/ui";
@@ -132,6 +133,7 @@ export default function AboutPage() {
       </Section>
 
       <Leadership />
+      <WhyUs />
       <CaseStudies />
       <HowItWorks />
       <ServiceAreas />

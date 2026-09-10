@@ -9,6 +9,7 @@ import {
   HowItWorks,
   Leadership,
   ServiceAreas,
+  WhyUs,
   Testimonials,
 } from "@/components/Sections";
 import { faqs } from "@/data/site";
@@ -22,6 +23,7 @@ export default function HomePage() {
       <AboutPreview />
       <Leadership />
       <HowItWorks />
+      <WhyUs />
       <CaseStudies />
       <Testimonials />
       <ServiceAreas />

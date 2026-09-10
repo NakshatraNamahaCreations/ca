@@ -84,6 +84,8 @@ export const workingHours = [
 
 export type Service = {
   slug: string;
+  /** Which of the three practice lines this sits under. */
+  group: string;
   title: string;
   short: string;
   icon: string;
@@ -96,245 +98,261 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "ca-audit-services",
-    title: "CA & Audit Services",
+    slug: "gst-litigation-representation",
+    group: "Goods & Services Tax",
+    title: "GST Litigation & Representation",
     short:
-      "Audit support, certification, and CA guidance to keep your accounts accurate and compliant.",
-    icon: "audit",
-    image: "/media/services/ca-audit-services.jpg",
-    description:
-      "Statutory, internal and tax audit support delivered by qualified chartered accountants. We work through your books, surface the issues early, and give you a clean, defensible set of accounts rather than a list of problems at year end.",
-    includes: [
-      "Statutory and internal audit support",
-      "Tax audit under the Income Tax Act",
-      "CA certifications and net-worth certificates",
-      "Books of accounts review and finalisation",
-      "Management letters with actionable findings",
-    ],
-    faqs: [
-      {
-        q: "Do you handle audits for small companies and LLPs?",
-        a: "Yes. We support entities of every size, from LLPs and private limited companies crossing audit thresholds for the first time to established businesses with ongoing statutory audit requirements.",
-      },
-      {
-        q: "Can you work with our existing accountant?",
-        a: "We regularly work alongside in-house accounting teams and external bookkeepers, taking over only the audit, certification and compliance layer.",
-      },
-    ],
-  },
-  {
-    slug: "business-financial-consultancy",
-    title: "Business & Financial Consultancy",
-    short:
-      "Practical business advice, financial structuring, and decision support to drive sustainable growth.",
-    icon: "consult",
-    image: "/media/services/business-financial-consultancy.jpg",
-    description:
-      "Advice grounded in your actual numbers. We help you structure the business correctly, understand what the financials are telling you, and make decisions on funding, pricing and expansion with evidence instead of instinct.",
-    includes: [
-      "Business structuring and entity selection",
-      "Financial health and profitability review",
-      "Funding readiness and lender documentation",
-      "Pricing, costing and margin analysis",
-      "Decision support for expansion and investment",
-    ],
-    faqs: [
-      {
-        q: "Is consultancy a one-time engagement or ongoing?",
-        a: "Both models are available. Many clients start with a one-time structuring or review engagement and move to a retainer once the recommendations are in motion.",
-      },
-      {
-        q: "Do you work with startups that are pre-revenue?",
-        a: "Yes. Early structuring decisions on entity type, founder agreements and compliance are far cheaper to get right at the start than to correct later.",
-      },
-    ],
-  },
-  {
-    slug: "virtual-cfo-services",
-    title: "Virtual CFO Services",
-    short:
-      "Strategic financial control, cashflow planning, budgeting, and growth guidance - on demand.",
-    icon: "cfo",
-    image: "/media/services/virtual-cfo-services.jpg",
-    description:
-      "A Virtual CFO provides expert financial strategy, planning and oversight without the cost of a full-time executive. We manage cash flow, analyse performance, reduce risk, and help you make data-driven decisions as you scale.",
-    includes: [
-      "Monthly MIS and management reporting",
-      "Cashflow forecasting and working capital control",
-      "Budgeting, variance analysis and cost control",
-      "Vendor payment and receivables discipline",
-      "Board and investor reporting support",
-    ],
-    faqs: [
-      {
-        q: "How can a Virtual CFO benefit my business?",
-        a: "A Virtual CFO provides expert financial strategy, planning, and oversight without the cost of a full-time executive. We help you manage cash flow, analyze performance, reduce risks, and make data-driven decisions to scale your business effectively.",
-      },
-      {
-        q: "How much involvement does it require from our team?",
-        a: "Typically a short monthly review once reporting is set up. The first two months need more input while we build the reporting structure around your business.",
-      },
-    ],
-  },
-  {
-    slug: "strategic-business-planning",
-    title: "Strategic Business Planning",
-    short:
-      "Clear, goal-driven planning with forecasting and execution roadmaps to scale with confidence.",
-    icon: "planning",
-    image: "/media/services/strategic-business-planning.jpg",
-    description:
-      "A plan you can actually execute against. We translate your goals into financial forecasts, milestones and a roadmap with owners and dates, then track performance against it so the plan stays live rather than filed away.",
-    includes: [
-      "Goal setting with financial modelling",
-      "Three to five year forecasting scenarios",
-      "Execution roadmap with milestones",
-      "KPI definition and performance tracking",
-      "Quarterly review and course correction",
-    ],
-    faqs: [
-      {
-        q: "What do we get at the end of a planning engagement?",
-        a: "A financial model, a written roadmap with milestones and owners, and a KPI dashboard you can maintain month to month.",
-      },
-      {
-        q: "How long does the planning process take?",
-        a: "Typically three to five weeks depending on how ready your historical financial data is.",
-      },
-    ],
-  },
-  {
-    slug: "statutory-compliance-management",
-    title: "Statutory Compliance Management",
-    short:
-      "Annual filings, registers, director compliances, and regulatory checklists handled end-to-end.",
-    icon: "compliance",
-    image: "/media/services/statutory-compliance-management.jpg",
-    description:
-      "We build a compliance calendar around your entity and then run it, so filings happen on schedule instead of in a scramble. Documentation is maintained audit-ready throughout the year, not reconstructed at the deadline.",
-    includes: [
-      "ROC annual filings and event-based forms",
-      "Statutory registers and minute books",
-      "Director KYC and related compliances",
-      "Compliance calendar with deadline tracking",
-      "Audit-ready documentation maintenance",
-    ],
-    faqs: [
-      {
-        q: "What happens if we have missed past filings?",
-        a: "We first assess the backlog and the exposure, then file the pending returns and put a calendar in place so it does not recur. Additional fees and penalties are quantified upfront.",
-      },
-      {
-        q: "Do you handle both company and LLP compliances?",
-        a: "Yes, for private limited companies, LLPs and partnership firms.",
-      },
-    ],
-  },
-  {
-    slug: "income-tax-filing-planning",
-    title: "Income Tax Filing & Tax Planning",
-    short:
-      "Accurate income tax filing with smart tax planning for individuals, startups, and businesses.",
-    icon: "tax",
-    image: "/media/services/income-tax-filing-planning.jpg",
-    description:
-      "Accurate, on-time income tax filing supported by planning that happens before the year ends rather than after. We identify eligible deductions and exemptions, and structure income so the saving is legitimate and documented.",
-    includes: [
-      "ITR filing for individuals, firms and companies",
-      "Advance tax computation and scheduling",
-      "Deduction and exemption optimisation",
-      "TDS reconciliation and Form 26AS matching",
-      "Notice handling and departmental responses",
-    ],
-    faqs: [
-      {
-        q: "Can Radiant help with both personal and business tax filings?",
-        a: "Yes, we handle both. Whether you're an individual professional or a business entity, we ensure accurate, timely filing of your income tax and GST returns, while helping you take advantage of eligible deductions and exemptions.",
-      },
-      {
-        q: "We received an income tax notice. Can you help?",
-        a: "Yes. We review the notice, assess what triggered it, and draft and file the response along with the supporting documentation.",
-      },
-    ],
-  },
-  {
-    slug: "gst-registration-filing",
-    title: "GST Registration & Return Filing",
-    short:
-      "Registration, monthly and annual returns, reconciliation, and notice support under GST.",
-    icon: "gst",
-    image: "/media/services/gst-registration-filing.jpg",
-    description:
-      "Stay compliant with accurate and timely GST filings. We handle registration, monthly and annual returns, and input credit reconciliation so mismatches are caught before the department raises them.",
-    includes: [
-      "GST registration and amendments",
-      "GSTR-1, GSTR-3B and annual return filing",
-      "Input tax credit reconciliation with 2B",
-      "E-way bill and e-invoicing guidance",
-      "GST notice and departmental response support",
-    ],
-    faqs: [
-      {
-        q: "How do we avoid GST notices?",
-        a: "Most notices come from mismatches between returns and input credit claims. We reconcile every month against GSTR-2B so differences are corrected in the same cycle rather than at year end.",
-      },
-      {
-        q: "Do you handle GST registration for new businesses?",
-        a: "Yes, including advising whether registration is required in the first place and in which states.",
-      },
-    ],
-  },
-  {
-    slug: "legal-drafting-documentation",
-    title: "Legal Drafting & Documentation",
-    short:
-      "Contracts, MOUs, partnership deeds, shareholder agreements, notices and documentation.",
+      "Replies to notices, departmental audit and anti-evasion proceedings, and appeals through the appellate stage.",
     icon: "legal",
     image: "/media/services/legal-drafting-documentation.jpg",
     description:
-      "Our legal drafting services cover contracts, MOUs, partnership deeds, shareholder agreements and more. We ensure your documents are legally sound, customised to your needs, and compliant with applicable laws.",
+      "Drafting to show-cause-notice standard, with statutory and judicial citation. Positions are documented at the advisory stage so they hold at assessment or appeal rather than being reconstructed once a notice arrives.",
     includes: [
-      "Contracts, service and vendor agreements",
-      "MOUs and letters of intent",
-      "Partnership deeds and LLP agreements",
-      "Shareholder and founder agreements",
-      "Legal notices and replies",
+      "Replies to notices under Sections 61, 65, 73 and 74 of the CGST Act, 2017",
+      "Departmental audit and anti-evasion proceedings",
+      "Appeals under Section 107 and appellate follow-through",
+      "Pre-deposit and cash-flow planning",
+      "Drafting with statutory and judicial citation",
     ],
     faqs: [
       {
-        q: "Do you offer support with legal documentation and drafting?",
-        a: "Absolutely. Our legal drafting services cover contracts, MOUs, partnership deeds, shareholder agreements, and more. We ensure your documents are legally sound, customized to your needs, and compliant with applicable laws.",
+        q: "At what stage should we bring you in?",
+        a: "As early as possible. A position documented at the advisory stage is far easier to defend than one reconstructed after a notice lands, which is why our advisory work is taken with the notice in mind.",
       },
       {
-        q: "Can you review a contract we have already received?",
-        a: "Yes. We review third-party drafts, flag the clauses that carry risk, and suggest specific redrafted language.",
+        q: "Do you handle the appellate stage as well as the reply?",
+        a: "Yes. The same team drafts the reply and carries it through Section 107 appeals and appellate follow-through, so the position stays consistent throughout.",
       },
     ],
   },
   {
-    slug: "company-llp-formation",
-    title: "Company & LLP Formation",
+    slug: "gst-annual-return-reconciliation",
+    group: "Goods & Services Tax",
+    title: "GST Annual Return & Reconciliation",
     short:
-      "End-to-end incorporation for private limited companies, LLPs and partnership firms.",
-    icon: "formation",
-    image: "/media/services/company-llp-formation.jpg",
+      "GSTR-9 and GSTR-9C for multi-GSTIN groups, with documented sampling and materiality.",
+    icon: "gst",
+    image: "/media/services/gst-registration-filing.jpg",
     description:
-      "Incorporation handled end to end, from name approval to your first set of statutory registers. We also advise on which structure actually suits your plans, because changing it later is expensive.",
+      "Annual return and reconciliation work for groups holding registrations across many States, delivered against statutory filing deadlines with a documented sampling and materiality basis.",
     includes: [
-      "Entity structure advisory",
-      "Name approval and DSC / DIN procurement",
-      "Incorporation filing and certificate",
-      "PAN, TAN and GST registration",
-      "Post-incorporation compliance setup",
+      "GSTR-9 and GSTR-9C for multi-GSTIN groups",
+      "Books-to-returns turnover reconciliation",
+      "ITC bifurcation into inputs, input services and capital goods",
+      "Fixed asset register review",
+      "GSTR-2B, e-invoice and e-way bill reconciliation",
     ],
     faqs: [
       {
-        q: "Private limited or LLP - which should we choose?",
-        a: "It depends on whether you plan to raise external funding, how many owners there are, and your compliance appetite. We walk through the trade-offs before you commit.",
+        q: "How many State registrations can you handle on one mandate?",
+        a: "We have delivered annual return and reconciliation work across approximately 20 State registrations for a single listed group with PAN-India operations.",
       },
       {
-        q: "How long does incorporation take?",
-        a: "Usually seven to fifteen working days once documentation is complete, subject to MCA processing times.",
+        q: "How is sampling decided?",
+        a: "On a documented sampling and materiality basis agreed at the start of the engagement, so the approach is defensible if it is later examined.",
+      },
+    ],
+  },
+  {
+    slug: "gst-advisory-structuring",
+    group: "Goods & Services Tax",
+    title: "GST Advisory & Structuring",
+    short:
+      "Classification, valuation, credit eligibility and place-of-supply positions, with a quantified exposure schedule.",
+    icon: "planning",
+    image: "/media/services/strategic-business-planning.jpg",
+    description:
+      "GST health checks delivered with a quantified exposure schedule and a documented fall-back position, so you know both the exposure and what the alternative argument is before you commit.",
+    includes: [
+      "Classification and valuation positions",
+      "Reverse charge exposure",
+      "Input tax credit eligibility and Section 17 apportionment",
+      "Blocked credits",
+      "Place of supply, export and intermediary characterisation",
+      "Refund claims",
+    ],
+    faqs: [
+      {
+        q: "What does a GST health check produce?",
+        a: "A quantified exposure schedule and a documented fall-back position for each item, rather than a list of observations.",
+      },
+      {
+        q: "Can you advise on export and intermediary characterisation?",
+        a: "Yes, including place of supply analysis and the refund position that follows from it.",
+      },
+    ],
+  },
+  {
+    slug: "gst-compliance",
+    group: "Complete Tax Outsourcing",
+    title: "GST Compliance",
+    short:
+      "The end-to-end monthly and annual cycle across single or multi-State registrations.",
+    icon: "compliance",
+    image: "/media/services/statutory-compliance-management.jpg",
+    description:
+      "Registrations through to the annual return, run on a single calendar so the compliance record, the books and the litigation position stay consistent with one another.",
+    includes: [
+      "Registrations and amendments",
+      "GSTR-1, GSTR-3B, ITC-04 and LUT",
+      "Credit reconciliation with vendor follow-up",
+      "Refund filing",
+      "Annual return across single or multi-State registrations",
+    ],
+    faqs: [
+      {
+        q: "Do you follow up with our vendors on credit mismatches?",
+        a: "Yes. Credit reconciliation includes vendor follow-up, since most mismatches are resolved at the supplier rather than in the return.",
+      },
+      {
+        q: "Can you take over a backlog?",
+        a: "Yes. Clean-up of legacy compliance backlogs is part of the outsourcing work.",
+      },
+    ],
+  },
+  {
+    slug: "direct-tax",
+    group: "Complete Tax Outsourcing",
+    title: "Direct Tax",
+    short:
+      "Computations, return filing, notice responses and faceless appellate representation.",
+    icon: "tax",
+    image: "/media/services/income-tax-filing-planning.jpg",
+    description:
+      "Corporate, firm and promoter tax handled end to end, including representation before the faceless assessment regime and CIT(A) / NFAC.",
+    includes: [
+      "Corporate, firm and promoter computations and return filing",
+      "Responses to notices under Sections 143(2), 142(1), 148 and 133(6)",
+      "Faceless assessment and CIT(A) / NFAC appellate representation",
+      "Capital gains",
+      "TDS returns and Section 195 certification including Form 15CA / 15CB",
+      "Regime comparison and salary structuring",
+    ],
+    faqs: [
+      {
+        q: "Do you appear in faceless proceedings?",
+        a: "Yes, including faceless assessment and appellate representation before CIT(A) and NFAC.",
+      },
+      {
+        q: "How many assessees can you handle in a filing season?",
+        a: "We have handled a filing season for a client base exceeding 290 assessees.",
+      },
+    ],
+  },
+  {
+    slug: "transfer-pricing-international-tax",
+    group: "Complete Tax Outsourcing",
+    title: "Transfer Pricing & International Tax",
+    short:
+      "Local File, Master File and Form 3CEB, with permanent establishment and treaty analysis.",
+    icon: "consult",
+    image: "/media/services/business-financial-consultancy.jpg",
+    description:
+      "Documentation and analysis for cross-border and foreign-owned groups, including exposure assessment where a permanent establishment or dependent agent PE may arise.",
+    includes: [
+      "Local File, Master File and Form 3CEB",
+      "Functional, asset and risk analysis and benchmarking",
+      "Associated enterprise determination",
+      "Intra-group service charge substantiation",
+      "Safe Harbour evaluation",
+      "Permanent establishment and DAPE assessment",
+      "Treaty interpretation and Schedule FA reporting",
+    ],
+    faqs: [
+      {
+        q: "Do you assess permanent establishment exposure?",
+        a: "Yes, including dependent agent PE, alongside the inter-company charging model and treaty analysis that follow from it.",
+      },
+      {
+        q: "Is Safe Harbour worth evaluating?",
+        a: "It depends on margins and the nature of the transaction. We evaluate it explicitly rather than assuming either way.",
+      },
+    ],
+  },
+  {
+    slug: "payroll-labour-statutes",
+    group: "Complete Tax Outsourcing",
+    title: "Payroll & Labour Statutes",
+    short:
+      "Payroll processing with provident fund, ESIC and professional tax computation and filing.",
+    icon: "users",
+    image: "/media/services/company-llp-formation.jpg",
+    description:
+      "Payroll run alongside the tax function rather than separately from it, so salary TDS and the statutory filings reconcile to the same books.",
+    includes: [
+      "Payroll processing",
+      "TDS on salary",
+      "Provident fund, ESIC and professional tax computation and filing",
+      "Full-and-final settlements",
+      "Employee tax declarations",
+    ],
+    faqs: [
+      {
+        q: "Why run payroll with the tax function?",
+        a: "Because salary TDS, provident fund and professional tax all reconcile back to the same books and the same calendar, which removes the differences that arise when payroll sits with a separate provider.",
+      },
+      {
+        q: "Do you handle full-and-final settlements?",
+        a: "Yes, along with employee tax declarations for the year.",
+      },
+    ],
+  },
+  {
+    slug: "corporate-compliance",
+    group: "Complete Tax Outsourcing",
+    title: "Corporate Compliance",
+    short:
+      "MCA and ROC filings, statutory registers, LLP filings and FEMA / RBI reporting support.",
+    icon: "audit",
+    image: "/media/services/ca-audit-services.jpg",
+    description:
+      "Annual and event-based corporate compliance, including entity set-up for foreign-owned entities and the clean-up of legacy compliance backlogs.",
+    includes: [
+      "MCA and ROC annual and event-based filings",
+      "Statutory registers and director compliance",
+      "LLP filings",
+      "FEMA and RBI reporting support",
+      "Entity set-up for foreign-owned entities",
+      "Clean-up of legacy compliance backlogs",
+    ],
+    faqs: [
+      {
+        q: "Can you set up an entity for a foreign parent?",
+        a: "Yes, including the FEMA and RBI reporting that follows incorporation.",
+      },
+      {
+        q: "We are behind on ROC filings. Can that be fixed?",
+        a: "Yes. Backlog clean-up is routine work; we assess the exposure first and quantify the additional fees before filing.",
+      },
+    ],
+  },
+  {
+    slug: "virtual-cfo",
+    group: "Virtual CFO & Finance Function",
+    title: "Virtual CFO & Finance Function",
+    short:
+      "Management reporting, budgeting and control, and the month and year-end close.",
+    icon: "cfo",
+    image: "/media/services/virtual-cfo-services.jpg",
+    description:
+      "A finance function delivered on demand: reporting that management can act on, planning and control that holds the working capital line, and a close that leaves you audit-ready. ERP environments include SAP, Microsoft Navision, Infor LN and Tally.",
+    includes: [
+      "Monthly management reporting; board and investor packs",
+      "Profitability by product, SKU, channel and customer",
+      "Annual budgets, rolling forecasts and variance analysis",
+      "Working capital, inventory and receivables control",
+      "Cash-flow forecasting and capital expenditure appraisal",
+      "Month and year-end close, Schedule III statements and consolidation",
+      "Audit readiness and coordination of statutory, internal, cost and tax audits",
+    ],
+    faqs: [
+      {
+        q: "Which ERP systems do you work in?",
+        a: "SAP, Microsoft Navision, Infor LN and Tally.",
+      },
+      {
+        q: "How does this differ from bookkeeping?",
+        a: "Bookkeeping records what happened. The Virtual CFO mandate adds the reporting, planning and control layer on top, so the numbers drive decisions rather than only satisfying a filing.",
       },
     ],
   },
@@ -342,12 +360,13 @@ export const services: Service[] = [
 
 /** Options shown in the "Service Needed" dropdown on the consultation form. */
 export const consultationServices = [
-  "Income Tax",
-  "GST Filing",
-  "Legal Drafting",
-  "Statutory Compliance",
+  "Goods & Services Tax",
+  "GST Litigation",
+  "Direct Tax",
+  "Transfer Pricing & International Tax",
+  "Payroll & Labour Statutes",
+  "Corporate Compliance",
   "Virtual CFO",
-  "Business Consulting",
 ];
 
 
@@ -433,13 +452,13 @@ export const stats = [
 ];
 
 export const aboutIntro =
-  "At Elite Radiant Consultants LLP, we are more than just a virtual CFO firm - we are your partners in business growth. With a foundation built on Professionalism, Trust, and Quality, we deliver financial expertise and strategic insights that drive sustainable success, all at a competitive cost.";
+  "Apex Radiant Consultants LLP is a Thane-headquartered firm of Chartered Accountants built around three things a mid-market or promoter-led business actually needs from a tax adviser: a specialist Goods and Services Tax practice, a complete tax and compliance function delivered on outsourcing, and a Virtual CFO capability that turns the numbers into decisions.";
 
 export const highlights = [
-  "Accurate income tax and GST filing with timely compliance",
-  "Legal drafting support for contracts, notices, and documentation",
-  "Virtual CFO and strategic planning for better decisions",
-  "Statutory compliance guidance to reduce risk and penalties",
+  "Built by professionals trained in large international accounting networks",
+  "Engagements scoped, documented and Partner-reviewed throughout",
+  "A defensible position taken first and documented at the advisory stage",
+  "Clients deal directly with a Partner from start to finish",
 ];
 
 export const assurances = [

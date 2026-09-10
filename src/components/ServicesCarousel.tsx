@@ -27,9 +27,9 @@ function Chevron({
 }
 
 export default function ServicesCarousel({
-  eyebrow = "Our best features",
-  title = "Explore our core services",
-  body = "Reliable solutions built for growing businesses. Clear process, timely compliance, and expert guidance that keeps you confident.",
+  eyebrow = "Service lines",
+  title = "What we do",
+  body = "A specialist GST practice, complete tax and compliance outsourcing, and a Virtual CFO capability - run off a single set of books and a single calendar.",
 }: {
   eyebrow?: string;
   title?: string;
@@ -168,6 +168,10 @@ export default function ServicesCarousel({
 
                 <span className="absolute top-5 left-6 text-sm font-bold tracking-widest text-white/55 transition-colors duration-300 group-hover:text-white/80">
                   {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <span className="absolute top-5 right-5 rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase ring-1 ring-white/20 backdrop-blur-sm">
+                  {s.group}
                 </span>
 
                 <div className="relative">

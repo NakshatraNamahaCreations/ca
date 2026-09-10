@@ -263,6 +263,9 @@ export { default as Testimonials } from "./BestOption";
 // "Meet the founders" - the partners from the firm profile.
 export { default as Leadership } from "./Leadership";
 
+// "Why clients engage us", from the firm profile.
+export { default as WhyUs } from "./WhyUs";
+
 export function BlogPreview() {
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-24">
