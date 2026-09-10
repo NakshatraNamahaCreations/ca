@@ -96,6 +96,16 @@ export function Formation(props: IconProps) {
   );
 }
 
+export function Users(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="9" cy="8" r="3.2" />
+      <path d="M3.5 20a5.5 5.5 0 0 1 11 0" />
+      <path d="M16 5.3a3.2 3.2 0 0 1 0 5.9M17.5 20a5.5 5.5 0 0 0-2.4-4.5" />
+    </svg>
+  );
+}
+
 export function Phone(props: IconProps) {
   return (
     <svg {...base} {...props}>
@@ -205,6 +215,7 @@ export function ChevronDown(props: IconProps) {
 }
 
 const registry: Record<string, (p: IconProps) => React.JSX.Element> = {
+  users: Users,
   audit: Audit,
   consult: Consult,
   cfo: Cfo,

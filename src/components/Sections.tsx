@@ -257,9 +257,9 @@ export function CaseStudies() {
   );
 }
 
-// The testimonials block is a client-side carousel; re-exported here so the
-// pages that already import { Testimonials } from "./Sections" keep working.
-export { default as Testimonials } from "./TestimonialsCarousel";
+// "We're the best option for your finances" - re-exported so the pages that
+// import { Testimonials } from "./Sections" keep working.
+export { default as Testimonials } from "./BestOption";
 
 export function BlogPreview() {
   return (
