@@ -61,16 +61,10 @@ export const site = {
  * points at is a section of the home page, so visitors never navigate away.
  * The standalone pages still exist and are reachable by URL.
  */
+/**
+ * Header and footer menu. Each item opens its own page.
+ */
 export const nav = [
-  { href: "/#top", label: "Home", id: "top" },
-  { href: "/#services", label: "Our Services", id: "services" },
-  { href: "/#about", label: "About Us", id: "about" },
-  { href: "/#faq", label: "FAQ", id: "faq" },
-  { href: "/#contact", label: "Contact", id: "contact" },
-];
-
-/** Kept for the sitemap and for restoring page-based navigation later. */
-export const pageNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Our Services" },

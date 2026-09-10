@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/data/site";
@@ -7,15 +8,14 @@ import { ButtonLink, cn } from "./ui";
 import Logo from "./Logo";
 import { Close, Menu, Phone } from "./Icons";
 
-// Routes whose hero is a dark full-bleed media banner: the header floats on top
-// of it in white until the visitor scrolls past.
+// Routes whose hero is a dark full-bleed banner: the header floats on top of it
+// in white until the visitor scrolls past.
 const OVERLAY_ROUTES = ["/"];
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("top");
 
   const overlay = OVERLAY_ROUTES.includes(pathname) && !scrolled && !open;
 
@@ -24,32 +24,6 @@ export default function Header() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Highlight whichever section is currently in view.
-  useEffect(() => {
-    const targets = nav
-      .map((item) => document.getElementById(item.id))
-      .filter((el): el is HTMLElement => Boolean(el));
-
-    if (targets.length === 0) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
-          )[0];
-        if (visible?.target.id) setActive(visible.target.id);
-      },
-      // A band just under the sticky header, so the highlight changes as a
-      // section reaches the top rather than when it first peeks into view.
-      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
-    );
-
-    targets.forEach((el) => io.observe(el));
-    return () => io.disconnect();
   }, []);
 
   useEffect(() => {
@@ -62,6 +36,11 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  // "/" only matches itself; every other item also matches its sub-pages, so a
+  // service detail page keeps "Our Services" highlighted.
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
@@ -77,27 +56,27 @@ export default function Header() {
       <div className="container-x flex h-20 items-center justify-between gap-4 sm:h-24">
         <Logo onDark={overlay} />
 
-        {/* In-page anchors only: the menu never leaves the home page */}
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) => {
-            const isActive = active === item.id;
+            const active = isActive(item.href);
             return (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   overlay
-                    ? isActive
+                    ? active
                       ? "bg-white/15 text-white"
                       : "text-white/75 hover:text-white"
-                    : isActive
+                    : active
                       ? "bg-[var(--bg-2)] text-brand-600"
                       : "muted hover:text-brand-600"
                 )}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
@@ -116,7 +95,7 @@ export default function Header() {
             {site.phone}
           </a>
 
-          {/* Dials rather than opening the contact page */}
+          {/* Dials rather than opening a page */}
           <ButtonLink
             href={site.phoneHref}
             variant={overlay ? "white" : "primary"}
@@ -152,17 +131,18 @@ export default function Header() {
       >
         <div className="container-x flex flex-col gap-1 py-4">
           {nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
+              aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
                 "rounded-xl px-3 py-3 text-[15px] font-medium hover:bg-[var(--bg-2)]",
-                active === item.id && "text-brand-600"
+                isActive(item.href) && "bg-[var(--bg-2)] text-brand-600"
               )}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <ButtonLink href={site.phoneHref} size="lg" className="mt-3">
             <Phone className="h-4 w-4" />
