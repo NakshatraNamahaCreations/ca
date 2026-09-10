@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mark from "@/../public/brand/mark.png";
+import banner from "@/../public/media/banner.jpg";
 import { areas, site, stats } from "@/data/site";
 import { ButtonLink } from "./ui";
 import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
@@ -7,13 +7,25 @@ import { ArrowRight, Check, MapPin, Phone, Shield } from "./Icons";
 export default function Hero() {
   return (
     <section className="relative isolate -mt-20 flex min-h-[38rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[44rem]">
-      {/* Navy ground drawn from the brand palette */}
+      {/* Banner photograph */}
+      <Image
+        src={banner}
+        alt=""
+        aria-hidden
+        fill
+        priority
+        sizes="100vw"
+        placeholder="blur"
+        className="-z-30 object-cover object-center"
+      />
+
+      {/* Navy scrim: heavy at the left so the copy always has contrast */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-30"
+        className="absolute inset-0 -z-20"
         style={{
           background:
-            "linear-gradient(135deg, #00163b 0%, #0c1e3c 48%, #1d3c6b 100%)",
+            "linear-gradient(100deg, rgba(0,22,59,.92) 0%, rgba(0,22,59,.76) 40%, rgba(6,20,45,.46) 70%, rgba(6,20,45,.38) 100%)",
         }}
       />
 
@@ -23,29 +35,11 @@ export default function Hero() {
         className="absolute inset-0 -z-20"
         style={{
           background:
-            "radial-gradient(52rem 30rem at 82% 12%, rgba(195,154,69,.20), transparent 62%), radial-gradient(40rem 26rem at 5% 95%, rgba(54,86,136,.45), transparent 65%)",
+            "radial-gradient(48rem 28rem at 84% 12%, rgba(195,154,69,.16), transparent 62%)",
         }}
       />
 
-      {/* Fine diagonal weave - texture without pattern noise */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-20 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 11px)",
-        }}
-      />
 
-      {/* The eagle, held back as a watermark */}
-      <Image
-        src={mark}
-        alt=""
-        aria-hidden
-        priority
-        sizes="700px"
-        className="pointer-events-none absolute top-1/2 -right-24 -z-10 hidden w-[44rem] -translate-y-1/2 opacity-[0.07] lg:block"
-      />
 
       <div className="container-x relative w-full pt-36 pb-20 lg:pt-40 lg:pb-24">
         <div className="animate-fade-up max-w-3xl text-white">
