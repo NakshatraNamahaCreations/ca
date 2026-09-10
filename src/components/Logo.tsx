@@ -1,54 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import mark from "@/../public/brand/mark.png";
+import logo from "@/../public/brand/logo-full.jpg";
 import { cn } from "./ui";
 
 /**
- * Brand lockup: the gold eagle mark cut out of the Apex Radiant brand artwork,
- * with the wordmark set in type beside it.
+ * Brand lockup, used exactly as supplied - the full Apex Radiant artwork
+ * (eagle, wordmark, CA mark and the services line), not a crop of it.
  *
- * The mark is a transparent PNG, so it needs no backing tile - gold reads
- * cleanly on both the dark video banner and the white header.
+ * The artwork has an opaque white ground, so over the dark video banner it sits
+ * on a white card. That presents the logo on its own background rather than
+ * altering the artwork.
  */
 export default function Logo({
   onDark = false,
   className,
-  showText = true,
 }: {
   onDark?: boolean;
   className?: string;
-  showText?: boolean;
 }) {
   return (
-    <Link href="/" className={cn("flex items-center gap-3", className)}>
-      <Image
-        src={mark}
-        alt=""
-        priority
-        sizes="96px"
-        className="h-9 w-auto shrink-0 object-contain sm:h-10"
-      />
-
-      {showText ? (
-        <span className="leading-none">
-          <span
-            className={cn(
-              "block text-[15px] font-bold tracking-[0.06em] sm:text-base",
-              onDark ? "text-white" : "text-brand-900"
-            )}
-          >
-            <span className="text-accent-600">APEX</span> RADIANT
-          </span>
-          <span
-            className={cn(
-              "mt-1 block text-[9px] font-semibold tracking-[0.28em] sm:text-[10px]",
-              onDark ? "text-white/65" : "text-ink-muted"
-            )}
-          >
-            CONSULTANT LLP
-          </span>
-        </span>
-      ) : null}
+    <Link href="/" className={cn("flex shrink-0 items-center", className)}>
+      <span
+        className={cn(
+          "inline-flex items-center overflow-hidden rounded-xl bg-white",
+          onDark
+            ? "px-3 py-1.5 shadow-lg shadow-black/20 ring-1 ring-white/25"
+            : "px-2 py-1"
+        )}
+      >
+        <Image
+          src={logo}
+          alt="Apex Radiant Consultant LLP - Chartered Accountants, Tax Consultants, Virtual CFO"
+          priority
+          sizes="(min-width: 640px) 300px, 210px"
+          className="h-12 w-auto object-contain sm:h-16"
+        />
+      </span>
     </Link>
   );
 }

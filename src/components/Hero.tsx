@@ -5,10 +5,10 @@ import { ArrowRight, Check, Phone, Shield } from "./Icons";
 
 export default function Hero() {
   return (
-    <section className="relative isolate -mt-16 flex min-h-[40rem] items-center overflow-hidden sm:-mt-18 lg:min-h-[46rem]">
+    <section className="relative isolate -mt-20 flex min-h-[40rem] items-center overflow-hidden sm:-mt-24 lg:min-h-[46rem]">
       <VideoBackground src="/media/hero.mp4" className="-z-10" />
 
-      <div className="container-x relative w-full pt-32 pb-20 lg:pt-36 lg:pb-24">
+      <div className="container-x relative w-full pt-36 pb-20 lg:pt-40 lg:pb-24">
         <div className="animate-fade-up max-w-3xl text-white">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-md">
             <Shield className="h-4 w-4 text-white/80" />

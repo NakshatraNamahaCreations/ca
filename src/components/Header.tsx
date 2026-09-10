@@ -74,7 +74,7 @@ export default function Header() {
             : "border-b border-transparent bg-[var(--bg)]"
       )}
     >
-      <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-18">
+      <div className="container-x flex h-20 items-center justify-between gap-4 sm:h-24">
         <Logo onDark={overlay} />
 
         {/* In-page anchors only: the menu never leaves the home page */}

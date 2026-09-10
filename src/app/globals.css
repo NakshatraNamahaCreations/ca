@@ -104,7 +104,7 @@
 
   /* Keep anchored sections clear of the sticky header when the menu jumps. */
   [id] {
-    scroll-margin-top: 5.5rem;
+    scroll-margin-top: 7rem;
   }
 
   body {
