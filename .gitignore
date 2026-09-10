@@ -13,3 +13,8 @@ next-env.d.ts
 # Unreferenced duplicate of public/media/hero.mp4 (byte-identical, 16 MB).
 # Kept on disk but out of the repo so it doesn't bloat history.
 /public/7593785-hd_1920_1080_25fps.mp4
+
+# Raw artwork dropped into public/ by hand. The site uses the optimised copies
+# in public/brand and public/media, so these multi-MB originals stay out.
+public/**/ChatGPT Image *
+public/**/WhatsApp Image *
