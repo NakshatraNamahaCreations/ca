@@ -1,6 +1,21 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import sanjayJohary from "@/../public/media/team/sanjay-johary.jpg";
+import rajkamalSingh from "@/../public/media/team/rajkamal-singh.jpg";
+import amandeepKaur from "@/../public/media/team/amandeep-kaur.jpg";
 import { leadership } from "@/data/site";
 import { Check } from "./Icons";
+
+/**
+ * Portraits are imported rather than referenced by path so Next fingerprints
+ * each file by content. Replacing a photo therefore changes its URL, which
+ * busts both the browser cache and Next's image optimiser - a plain
+ * "/media/..." string keeps the same URL and serves the previous crop.
+ */
+const portraits: Record<string, StaticImageData> = {
+  "/media/team/sanjay-johary.jpg": sanjayJohary,
+  "/media/team/rajkamal-singh.jpg": rajkamalSingh,
+  "/media/team/amandeep-kaur.jpg": amandeepKaur,
+};
 
 /**
  * "Meet the founders" - each partner led by a large portrait, with tenure, the
@@ -42,7 +57,8 @@ export default function Leadership() {
 
         <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {leadership.map((person) => {
-            const photo = "photo" in person ? person.photo : undefined;
+            const photoPath = "photo" in person ? person.photo : undefined;
+            const photo = photoPath ? portraits[photoPath] : undefined;
 
             return (
               <article
@@ -56,6 +72,7 @@ export default function Leadership() {
                       src={photo}
                       alt={person.name}
                       fill
+                      placeholder="blur"
                       sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
                       className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
                     />
