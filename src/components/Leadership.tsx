@@ -1,7 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import sanjayJohary from "@/../public/media/team/sanjay-johary-card.jpg";
 import rajkamalSingh from "@/../public/media/team/rajkamal-singh-card.jpg";
-import amandeepKaur from "@/../public/media/team/amandeep-kaur.jpg";
+import amandeepKaur from "@/../public/media/team/amandeep-kaur-card.jpg";
 import { leadership } from "@/data/site";
 import { Check } from "./Icons";
 
@@ -14,7 +14,7 @@ import { Check } from "./Icons";
 const portraits: Record<string, StaticImageData> = {
   "/media/team/sanjay-johary-card.jpg": sanjayJohary,
   "/media/team/rajkamal-singh-card.jpg": rajkamalSingh,
-  "/media/team/amandeep-kaur.jpg": amandeepKaur,
+  "/media/team/amandeep-kaur-card.jpg": amandeepKaur,
 };
 
 /**

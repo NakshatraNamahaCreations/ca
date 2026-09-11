@@ -412,7 +412,9 @@ export const leadership = [
   {
     name: "CA Amandeep Kaur",
     role: "Partner · Virtual CFO, Reporting & Assurance",
-    photo: "/media/team/amandeep-kaur.jpg",
+    photo: "/media/team/amandeep-kaur-card.jpg",
+    photoIsCard: true,
+    photoShowsTenure: true,
     tenure: "11+ years",
     background:
       "Senior FP&A roles with Remsons Industries and Godrej & Boyce; audit practice with Kalyaniwalla & Mistry LLP.",
