@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import mark from "@/../public/brand/mark.png";
 
 export default function PageHero({
   eyebrow,
@@ -41,14 +39,6 @@ export default function PageHero({
         }}
       />
 
-      {/* The eagle, held back as a watermark */}
-      <Image
-        src={mark}
-        alt=""
-        aria-hidden
-        sizes="520px"
-        className="pointer-events-none absolute top-1/2 -right-16 -z-10 hidden w-[32rem] -translate-y-1/2 opacity-[0.08] lg:block"
-      />
 
       <div className="container-x relative py-14 sm:py-20">
         {breadcrumbs?.length ? (
