@@ -378,7 +378,10 @@ export const leadership = [
   {
     name: "CA Sanjay Johary",
     role: "Founder",
-    photo: "/media/team/sanjay-johary.jpg",
+    photo: "/media/team/sanjay-johary-card.jpg",
+    /** Supplied as a finished card: it carries its own name plate, so the
+     *  overlaid caption is suppressed and the artwork is shown whole. */
+    photoIsCard: true,
     tenure: "30+ years",
     background:
       "Senior finance leadership across large manufacturing and corporate environments.",

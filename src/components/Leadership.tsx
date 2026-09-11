@@ -1,5 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
-import sanjayJohary from "@/../public/media/team/sanjay-johary.jpg";
+import sanjayJohary from "@/../public/media/team/sanjay-johary-card.jpg";
 import rajkamalSingh from "@/../public/media/team/rajkamal-singh.jpg";
 import amandeepKaur from "@/../public/media/team/amandeep-kaur.jpg";
 import { leadership } from "@/data/site";
@@ -12,7 +12,7 @@ import { Check } from "./Icons";
  * "/media/..." string keeps the same URL and serves the previous crop.
  */
 const portraits: Record<string, StaticImageData> = {
-  "/media/team/sanjay-johary.jpg": sanjayJohary,
+  "/media/team/sanjay-johary-card.jpg": sanjayJohary,
   "/media/team/rajkamal-singh.jpg": rajkamalSingh,
   "/media/team/amandeep-kaur.jpg": amandeepKaur,
 };
@@ -59,6 +59,9 @@ export default function Leadership() {
           {leadership.map((person) => {
             const photoPath = "photo" in person ? person.photo : undefined;
             const photo = photoPath ? portraits[photoPath] : undefined;
+            // Some portraits arrive as finished cards with their own name
+            // plate; those are shown whole and keep their own caption.
+            const isCard = "photoIsCard" in person && person.photoIsCard;
 
             return (
               <article
@@ -66,7 +69,13 @@ export default function Leadership() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-[#ece5d9] bg-white shadow-[0_1px_2px_rgba(16,25,43,.04)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-[0_26px_54px_-18px_rgba(29,60,107,.34)]"
               >
                 {/* Portrait leads the card */}
-                <div className="relative aspect-4/5 overflow-hidden bg-brand-800">
+                <div
+                  className={
+                    isCard
+                      ? "relative aspect-4/5 overflow-hidden bg-white"
+                      : "relative aspect-4/5 overflow-hidden bg-brand-800"
+                  }
+                >
                   {photo ? (
                     <Image
                       src={photo}
@@ -74,7 +83,11 @@ export default function Leadership() {
                       fill
                       placeholder="blur"
                       sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                      className={
+                        isCard
+                          ? "object-contain"
+                          : "object-cover object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                      }
                     />
                   ) : (
                     <span className="absolute inset-0 grid place-items-center text-5xl font-bold text-white/25">
@@ -87,30 +100,40 @@ export default function Leadership() {
                     </span>
                   )}
 
-                  {/* Name and role sit on the portrait */}
-                  <div
-                    aria-hidden
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        "linear-gradient(to top, rgba(0,22,59,.94) 0%, rgba(0,22,59,.60) 26%, rgba(0,22,59,.10) 52%, transparent 72%)",
-                    }}
-                  />
+                  {/* Name and role sit on plain portraits; a supplied card
+                      already carries them. */}
+                  {!isCard ? (
+                    <>
+                      <div
+                        aria-hidden
+                        className="absolute inset-0"
+                        style={{
+                          background:
+                            "linear-gradient(to top, rgba(0,22,59,.94) 0%, rgba(0,22,59,.60) 26%, rgba(0,22,59,.10) 52%, transparent 72%)",
+                        }}
+                      />
 
-                  <div className="absolute right-5 bottom-5 left-5">
-                    <span className="inline-flex rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase ring-1 ring-white/25 backdrop-blur-sm">
-                      {person.tenure}
-                    </span>
-                    <h3 className="mt-2.5 text-xl leading-tight font-bold text-white">
-                      {person.name}
-                    </h3>
-                    <p className="mt-1 text-[11px] leading-snug font-semibold tracking-[0.12em] text-accent-400 uppercase">
-                      {person.role}
-                    </p>
-                  </div>
+                      <div className="absolute right-5 bottom-5 left-5">
+                        <span className="inline-flex rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-bold tracking-wide text-white uppercase ring-1 ring-white/25 backdrop-blur-sm">
+                          {person.tenure}
+                        </span>
+                        <h3 className="mt-2.5 text-xl leading-tight font-bold text-white">
+                          {person.name}
+                        </h3>
+                        <p className="mt-1 text-[11px] leading-snug font-semibold tracking-[0.12em] text-accent-400 uppercase">
+                          {person.role}
+                        </p>
+                      </div>
+                    </>
+                  ) : null}
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
+                  {isCard ? (
+                    <span className="mb-4 inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 ring-1 ring-brand-100">
+                      {person.tenure}
+                    </span>
+                  ) : null}
                   <p className="text-sm leading-relaxed text-ink-muted">
                     {person.background}
                   </p>
