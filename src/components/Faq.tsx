@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { site } from "@/data/site";
-import { ButtonLink, cn } from "./ui";
-import { ArrowRight, Phone } from "./Icons";
+import { cn } from "./ui";
 
 type Item = { q: string; a: string };
 
@@ -13,7 +11,6 @@ export default function Faq({
   title = "Questions we get asked a lot",
   body = "Quick answers about our financial, compliance, and legal services. If you need anything else, our team is a call away.",
   alt = false,
-  support = true,
   id,
   columns = 1,
 }: {
@@ -22,8 +19,6 @@ export default function Faq({
   title?: string;
   body?: string;
   alt?: boolean;
-  /** Show the "still have questions" card. */
-  support?: boolean;
   /** Anchor id, so the header menu can scroll to it. */
   id?: string;
   /** 2 puts the heading across the top and splits the list into two columns. */
@@ -66,52 +61,6 @@ export default function Faq({
     </>
   );
 
-  const supportCard = support ? (
-    <div
-      className={cn(
-        "overflow-hidden rounded-2xl bg-brand-700 p-6 shadow-xl shadow-brand-900/20",
-        twoUp ? "mx-auto mt-14 max-w-3xl text-center" : "mt-9"
-      )}
-    >
-      <h3 className="text-base font-bold text-white">Still have questions?</h3>
-      <p
-        className={cn(
-          "mt-2 text-sm leading-relaxed text-brand-100",
-          twoUp && "mx-auto max-w-xl"
-        )}
-      >
-        Share your requirement and our experts will guide you with the right
-        compliance, tax, and legal plan.
-      </p>
-      <div
-        className={cn(
-          "mt-5 flex flex-col gap-2.5",
-          twoUp
-            ? "sm:flex-row sm:justify-center"
-            : "sm:flex-row lg:flex-col xl:flex-row"
-        )}
-      >
-        <ButtonLink
-          href="/contact"
-          variant="accent"
-          className={cn("w-full sm:w-auto", !twoUp && "lg:w-full xl:w-auto")}
-        >
-          Book consultation
-          <ArrowRight className="h-4 w-4" />
-        </ButtonLink>
-        <ButtonLink
-          href={site.phoneHref}
-          className={cn(
-            "w-full border border-white/25 bg-white/10 text-white shadow-none hover:bg-white/20 sm:w-auto",
-            !twoUp && "lg:w-full xl:w-auto"
-          )}
-        >
-          <Phone className="h-4 w-4" />
-          Call now
-        </ButtonLink>
-      </div>
-    </div>
-  ) : null;
 
   const list = stacks.map((stack, stackIndex) => (
     <div key={stackIndex} className="space-y-4 self-start">
@@ -217,13 +166,11 @@ export default function Faq({
             <div className="mt-14 grid items-start gap-5 lg:grid-cols-2">
               {list}
             </div>
-            {supportCard}
           </>
         ) : (
           <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_1.3fr] lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">
               {intro}
-              {supportCard}
             </div>
             <div className="space-y-4">{list}</div>
           </div>

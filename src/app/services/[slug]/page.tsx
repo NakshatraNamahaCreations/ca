@@ -151,7 +151,6 @@ export default async function ServiceDetailPage({ params }: Params) {
         eyebrow="Good to know"
         title={`${service.title} questions`}
         alt
-        support={false}
       />
 
       <Section>
