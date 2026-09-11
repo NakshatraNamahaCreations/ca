@@ -422,26 +422,32 @@ export const leadership = [
 /** "Why clients engage us", from the firm profile. */
 export const whyUs = [
   {
+    icon: "gst",
     title: "GST depth, not GST coverage",
     body: "GST is the specialisation rather than one line on a list. The same team that files the return prepares the reconciliation and drafts the reply, so the position taken in the return is the position defended in the notice.",
   },
   {
+    icon: "compliance",
     title: "One provider, whole function",
     body: "Indirect tax, direct tax, transfer pricing, payroll and corporate compliance run off a single set of books and a single calendar, which removes the reconciliation differences that arise when these are split across providers.",
   },
   {
+    icon: "audit",
     title: "Large-firm method",
     body: "Engagement letters, structured working papers, documented sampling and materiality, and Partner review on every deliverable.",
   },
   {
+    icon: "cfo",
     title: "Mid-market economics",
     body: "Delivered without the cost structure, layered staffing or turnaround lag of a large network firm.",
   },
   {
+    icon: "legal",
     title: "Litigation orientation",
     body: "Advisory positions are taken with the notice in mind, so documentation is built at the advisory stage rather than reconstructed at assessment.",
   },
   {
+    icon: "users",
     title: "Continuity",
     body: "Direct Partner access and a stable delivery team, so context is not lost between assignments.",
   },
