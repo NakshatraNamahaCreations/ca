@@ -1,6 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import sanjayJohary from "@/../public/media/team/sanjay-johary-card.jpg";
-import rajkamalSingh from "@/../public/media/team/rajkamal-singh.jpg";
+import rajkamalSingh from "@/../public/media/team/rajkamal-singh-card.jpg";
 import amandeepKaur from "@/../public/media/team/amandeep-kaur.jpg";
 import { leadership } from "@/data/site";
 import { Check } from "./Icons";
@@ -13,7 +13,7 @@ import { Check } from "./Icons";
  */
 const portraits: Record<string, StaticImageData> = {
   "/media/team/sanjay-johary-card.jpg": sanjayJohary,
-  "/media/team/rajkamal-singh.jpg": rajkamalSingh,
+  "/media/team/rajkamal-singh-card.jpg": rajkamalSingh,
   "/media/team/amandeep-kaur.jpg": amandeepKaur,
 };
 
@@ -62,6 +62,9 @@ export default function Leadership() {
             // Some portraits arrive as finished cards with their own name
             // plate; those are shown whole and keep their own caption.
             const isCard = "photoIsCard" in person && person.photoIsCard;
+            // Some supplied cards print the tenure themselves.
+            const cardShowsTenure =
+              "photoShowsTenure" in person && person.photoShowsTenure;
 
             return (
               <article
@@ -129,7 +132,7 @@ export default function Leadership() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  {isCard ? (
+                  {isCard && !cardShowsTenure ? (
                     <span className="mb-4 inline-flex w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700 ring-1 ring-brand-100">
                       {person.tenure}
                     </span>

@@ -395,7 +395,10 @@ export const leadership = [
   {
     name: "CA Rajkamal Singh",
     role: "Founding Partner · Signing Partner, Tax & Regulatory",
-    photo: "/media/team/rajkamal-singh.jpg",
+    photo: "/media/team/rajkamal-singh-card.jpg",
+    photoIsCard: true,
+    /** This card prints the tenure itself, so the body chip is suppressed. */
+    photoShowsTenure: true,
     tenure: "18+ years",
     background:
       "KPMG, Deloitte and PwC; senior finance and taxation roles with listed corporates including Birla Corporation, ACC and the Adani Group.",
