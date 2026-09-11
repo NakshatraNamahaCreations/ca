@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import ServicesCarousel from "@/components/ServicesCarousel";
+import PracticeLines from "@/components/PracticeLines";
 import Faq from "@/components/Faq";
-import { CtaBanner, HowItWorks } from "@/components/Sections";
-import { faqs } from "@/data/site";
+import { CtaBanner } from "@/components/Sections";
+import { services } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "CA and audit services, business consultancy, Virtual CFO, strategic planning, statutory compliance, income tax, GST, legal drafting and company formation.",
+    "A specialist GST practice - advisory, annual return and litigation - complete tax and compliance outsourcing, and a Virtual CFO capability, for businesses across Thane and Mumbai.",
   alternates: { canonical: "/services" },
 };
+
+// Every service's own questions, gathered under one accordion. The home page
+// carries the general FAQs, so this page asks different things.
+const serviceFaqs = services.flatMap((s) =>
+  s.faqs.map((f) => ({ ...f, service: s.title }))
+);
 
 export default function ServicesPage() {
   return (
@@ -24,13 +30,14 @@ export default function ServicesPage() {
           { href: "/services", label: "Our Services" },
         ]}
       />
-      <ServicesCarousel
-        eyebrow="What we do"
-        title="Three practice lines, one calendar"
-        body="Indirect tax, direct tax, transfer pricing, payroll and corporate compliance run off a single set of books, so the position taken in a return is the position defended in a notice."
+      <PracticeLines />
+      <Faq
+        items={serviceFaqs}
+        eyebrow="Service questions"
+        title="Asked on live engagements"
+        body="Answers tied to the work itself - reconciliation basis, appellate stages, ERP environments and the rest."
+        alt
       />
-      <HowItWorks />
-      <Faq items={faqs} />
       <CtaBanner />
     </>
   );

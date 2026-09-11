@@ -461,6 +461,26 @@ export const whyUs = [
   },
 ];
 
+
+/** The firm's own summary of itself, from page 1 of the 2026 profile. */
+export const firmAtAGlance = [
+  {
+    icon: "gst",
+    label: "Specialisation",
+    body: "Goods and Services Tax - advisory, annual return and reconciliation work, and litigation from show-cause notice through the appellate stage. GST is the core of the practice; the tax outsourcing and Virtual CFO lines are built around it so that compliance, books and litigation positions stay consistent with one another.",
+  },
+  {
+    icon: "formation",
+    label: "Structure",
+    body: "Limited Liability Partnership. Functions reserved to Chartered Accountants are carried on through the CA firm; permitted non-attest and outsourcing services are delivered through Apex Radiant Services. Two Partners, supported by Senior Executives, Executives and article assistants across the indirect tax, direct tax and accounting verticals.",
+  },
+  {
+    icon: "users",
+    label: "Clients",
+    body: "Listed and large corporates, mid-market manufacturing and infrastructure, real estate, hospitality and services, start-ups, and cross-border or foreign-owned entities. The client base includes a listed company with PAN-India operations and annual turnover in excess of ₹2,500 crore.",
+  },
+];
+
 export const stats = [
   { value: "18+", label: "Years of partner experience" },
   { value: "17", label: "Professionals across three verticals" },

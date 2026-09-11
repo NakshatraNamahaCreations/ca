@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import {
-  CaseStudies,
-  CtaBanner,
-  HowItWorks,
-  Leadership,
-  ServiceAreas,
-  WhyUs,
-  Testimonials,
-} from "@/components/Sections";
+import { CtaBanner, Leadership } from "@/components/Sections";
+import FirmAtAGlance from "@/components/FirmAtAGlance";
 import { Section, SectionHeading } from "@/components/ui";
 import { Check, Shield } from "@/components/Icons";
 import { aboutIntro, assurances, highlights, site, stats } from "@/data/site";
@@ -132,12 +125,8 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <FirmAtAGlance />
       <Leadership />
-      <WhyUs />
-      <CaseStudies />
-      <HowItWorks />
-      <ServiceAreas />
-      <Testimonials />
       <CtaBanner />
     </>
   );
