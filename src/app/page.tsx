@@ -7,7 +7,6 @@ import {
   CaseStudies,
   CtaBanner,
   HowItWorks,
-  Leadership,
   ServiceAreas,
   WhyUs,
   Testimonials,
@@ -21,7 +20,6 @@ export default function HomePage() {
       <Hero />
       <ServicesCarousel />
       <AboutPreview />
-      <Leadership />
       <HowItWorks />
       <WhyUs />
       <CaseStudies />
