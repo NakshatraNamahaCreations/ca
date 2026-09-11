@@ -29,7 +29,12 @@ export default function FaqPage() {
         ]}
       />
 
-      <Faq items={faqs} eyebrow="General" title="About working with us" />
+      <Faq
+        items={faqs}
+        eyebrow="General"
+        title="About working with us"
+        columns={2}
+      />
 
       <Faq
         items={serviceFaqs}
@@ -37,6 +42,7 @@ export default function FaqPage() {
         title="Service-specific questions"
         body="Answers tied to individual engagements, from Virtual CFO reporting to GST reconciliation."
         alt
+        columns={2}
       />
 
       <CtaBanner />

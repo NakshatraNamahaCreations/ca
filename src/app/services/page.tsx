@@ -37,6 +37,7 @@ export default function ServicesPage() {
         title="Asked on live engagements"
         body="Answers tied to the work itself - reconciliation basis, appellate stages, ERP environments and the rest."
         alt
+        columns={2}
       />
       <CtaBanner />
     </>
