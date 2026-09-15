@@ -371,31 +371,16 @@ export const consultationServices = [
 
 
 /**
- * Leadership, from the 2026 firm profile. Sanjay Johary is taken from the
- * "Meet The Founders" slide supplied alongside it.
+ * Leadership, from the 2026 firm profile. The two founders lead; Sanjay
+ * Johary is taken from the "Meet The Founders" slide supplied alongside it.
  */
 export const leadership = [
-  {
-    name: "CA Sanjay Johary",
-    role: "Founder",
-    photo: "/media/team/sanjay-johary-card.jpg",
-    /** Supplied as a finished card: it carries its own name plate, so the
-     *  overlaid caption is suppressed and the artwork is shown whole. */
-    photoIsCard: true,
-    tenure: "30+ years",
-    background:
-      "Senior finance leadership across large manufacturing and corporate environments.",
-    focus: [
-      "FP&A, budgeting, forecasting and management reporting",
-      "Cost optimization, working capital and treasury management",
-      "End-to-end accounting, taxation and statutory compliance",
-      "Process improvement, shared services and GST transition",
-    ],
-  },
   {
     name: "CA Rajkamal Singh",
     role: "Founding Partner · Signing Partner, Tax & Regulatory",
     photo: "/media/team/rajkamal-singh-card.jpg",
+    /** Supplied as a finished card: it carries its own name plate, so the
+     *  overlaid caption is suppressed and the artwork is shown whole. */
     photoIsCard: true,
     /** This card prints the tenure itself, so the body chip is suppressed. */
     photoShowsTenure: true,
@@ -423,6 +408,21 @@ export const leadership = [
       "Board and management reporting packs",
       "Profitability by product, SKU and channel",
       "Working capital, inventory and receivables control",
+    ],
+  },
+  {
+    name: "CA Sanjay Johary",
+    role: "Founder",
+    photo: "/media/team/sanjay-johary-card.jpg",
+    photoIsCard: true,
+    tenure: "30+ years",
+    background:
+      "Senior finance leadership across large manufacturing and corporate environments.",
+    focus: [
+      "FP&A, budgeting, forecasting and management reporting",
+      "Cost optimization, working capital and treasury management",
+      "End-to-end accounting, taxation and statutory compliance",
+      "Process improvement, shared services and GST transition",
     ],
   },
 ];
