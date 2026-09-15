@@ -415,6 +415,7 @@ export const leadership = [
     role: "Founder",
     photo: "/media/team/sanjay-johary-card.jpg",
     photoIsCard: true,
+    photoShowsTenure: true,
     tenure: "30+ years",
     background:
       "Senior finance leadership across large manufacturing and corporate environments.",
