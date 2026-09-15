@@ -370,11 +370,8 @@ export const consultationServices = [
 ];
 
 
-/**
- * Leadership, from the 2026 firm profile. The two founders lead; Sanjay
- * Johary is taken from the "Meet The Founders" slide supplied alongside it.
- */
-export const leadership = [
+/** The founders, from the 2026 firm profile. */
+export const founders = [
   {
     name: "CA Rajkamal Singh",
     role: "Founding Partner · Signing Partner, Tax & Regulatory",
@@ -410,6 +407,10 @@ export const leadership = [
       "Working capital, inventory and receivables control",
     ],
   },
+];
+
+/** "Our team" - partners who are not founders. */
+export const team = [
   {
     name: "CA Sanjay Johary",
     role: "Partner",
