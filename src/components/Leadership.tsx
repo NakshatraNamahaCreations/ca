@@ -18,7 +18,7 @@ const portraits: Record<string, StaticImageData> = {
 };
 
 /**
- * "Meet the founders", then "Our team" - each person led by a large portrait,
+ * The founders and the team in one row - each person led by a large portrait,
  * with tenure, the practices they came from and what they focus on beneath it.
  */
 export default function Leadership() {
@@ -42,7 +42,7 @@ export default function Leadership() {
             Leadership
           </span>
           <h2 className="mt-4 text-3xl leading-[1.14] font-bold tracking-tight text-balance text-ink sm:text-[2.6rem]">
-            Meet the founders
+            Meet our founders &amp; team
           </h2>
           <span
             aria-hidden
@@ -55,34 +55,10 @@ export default function Leadership() {
           </p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-4xl gap-7 sm:grid-cols-2">
-          {founders.map((person) => (
+        {/* One row: the founders first, then the rest of the team. */}
+        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {[...founders, ...team].map((person) => (
             <PersonCard key={person.name} person={person} />
-          ))}
-        </div>
-
-        <div className="mx-auto mt-20 max-w-2xl text-center">
-          <span className="text-xs font-semibold tracking-[0.18em] text-accent-600 uppercase">
-            Partners
-          </span>
-          <h2 className="mt-4 text-3xl leading-[1.14] font-bold tracking-tight text-balance text-ink sm:text-[2.6rem]">
-            Our team
-          </h2>
-          <span
-            aria-hidden
-            className="mx-auto mt-6 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-700 via-accent-500 to-accent-300"
-          />
-        </div>
-
-        {/* Centred at the same card width as the founders above. */}
-        <div className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-7">
-          {team.map((person) => (
-            <div
-              key={person.name}
-              className="flex w-full sm:w-[calc(50%-0.875rem)]"
-            >
-              <PersonCard person={person} />
-            </div>
           ))}
         </div>
       </div>
