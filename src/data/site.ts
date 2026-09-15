@@ -412,7 +412,7 @@ export const leadership = [
   },
   {
     name: "CA Sanjay Johary",
-    role: "Founder",
+    role: "Partner",
     photo: "/media/team/sanjay-johary-card.jpg",
     photoIsCard: true,
     photoShowsTenure: true,
